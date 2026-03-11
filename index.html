@@ -256,6 +256,37 @@ to{opacity:1;transform:translateY(0);}
 <a href="#orcamento">Orçamento</a>
 <a href="#contato">Contato</a>
 
+  ```html
+<section class="container" id="manutencao">
+
+<h2 class="section-title">Solicitar Manutenção</h2>
+
+<form onsubmit="enviarManutencao();return false;">
+
+<input id="nomeM" placeholder="Seu nome">
+
+<input id="telefoneM" placeholder="Telefone">
+
+<select id="equipamento">
+
+<option>Câmera</option>
+<option>Alarme</option>
+<option>Cerca elétrica</option>
+<option>Motor de portão</option>
+
+</select>
+
+<input id="endereco" placeholder="Endereço do local">
+
+<textarea id="problema" placeholder="Descreva o problema"></textarea>
+
+<button>Solicitar Manutenção</button>
+
+</form>
+
+</section>
+```
+
 </nav>
 
 <section class="hero" id="inicio">
@@ -485,3 +516,4 @@ mostrarAvaliacoes()
 </body>
 </html>
 ```
+
