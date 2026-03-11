@@ -9,16 +9,25 @@
 
 <title>Seven Tech Solutions | Segurança Eletrônica em Unaí MG</title>
 
-<meta name="description" content="Instalação de câmeras, alarmes, cerca elétrica e motor de portão em Unaí MG. Mais de 9 anos de experiência em segurança eletrônica.">
+<meta name="description" content="Instalação de câmeras, alarmes, cerca elétrica e motor de portão em Unaí MG. Mais de 9 anos de experiência.">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
 
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
 body{
 font-family:Arial;
-margin:0;
 background:linear-gradient(180deg,#0b0f14,#111a22);
 color:white;
 }
+
+/* HEADER */
 
 header{
 background:#05080c;
@@ -31,6 +40,12 @@ header img{
 width:160px;
 }
 
+header h1{
+color:#19c37d;
+}
+
+/* MENU */
+
 nav{
 background:#0f1f2b;
 padding:15px;
@@ -39,7 +54,7 @@ text-align:center;
 
 nav a{
 color:white;
-margin:0 18px;
+margin:0 15px;
 text-decoration:none;
 font-weight:bold;
 }
@@ -48,42 +63,46 @@ nav a:hover{
 color:#19c37d;
 }
 
+/* HERO */
+
 .hero{
-padding:90px 20px;
+padding:100px 20px;
 text-align:center;
+animation:fade 2s;
 }
 
-.hero h1{
+.hero h2{
 font-size:40px;
 color:#19c37d;
 }
 
 .hero p{
 font-size:18px;
-}
-
-.experiencia{
-margin-top:15px;
-font-size:20px;
-color:#19c37d;
-font-weight:bold;
+margin-top:10px;
 }
 
 .btn{
 margin-top:25px;
 display:inline-block;
-padding:14px 30px;
+padding:14px 28px;
 background:#19c37d;
 color:black;
 font-weight:bold;
 border-radius:8px;
 text-decoration:none;
+transition:0.3s;
 }
 
+.btn:hover{
+transform:scale(1.05);
+}
+
+/* CONTAINER */
+
 .container{
-padding:70px 20px;
 max-width:1100px;
 margin:auto;
+padding:70px 20px;
 }
 
 .section-title{
@@ -93,11 +112,15 @@ font-size:30px;
 color:#19c37d;
 }
 
+/* GRID */
+
 .grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
 gap:25px;
 }
+
+/* CARDS */
 
 .card{
 background:#162734;
@@ -109,7 +132,7 @@ transition:0.3s;
 }
 
 .card:hover{
-transform:scale(1.05);
+transform:translateY(-8px);
 border-color:#19c37d;
 }
 
@@ -118,12 +141,17 @@ width:100%;
 height:160px;
 object-fit:cover;
 border-radius:8px;
+margin-bottom:10px;
 }
+
+/* GALERIA */
 
 .gallery img{
 width:100%;
 border-radius:10px;
 }
+
+/* FORM */
 
 form{
 background:#162734;
@@ -150,31 +178,59 @@ cursor:pointer;
 }
 
 button:hover{
-background:#16a56a;
+background:#14a469;
 }
+
+/* AVALIAÇÕES */
+
+.review{
+background:#162734;
+padding:20px;
+border-radius:10px;
+border:1px solid #2b4456;
+margin-bottom:20px;
+}
+
+.stars{
+color:#ffd700;
+margin-bottom:10px;
+}
+
+/* MAPA */
+
+iframe{
+border-radius:10px;
+}
+
+/* FOOTER */
 
 footer{
 background:#020406;
+padding:30px;
 text-align:center;
-padding:25px;
 color:#9aa6af;
 }
 
-.whatsapp-float{
+/* WHATSAPP */
+
+.whatsapp{
 position:fixed;
 bottom:20px;
 right:20px;
 background:#25d366;
 padding:15px 20px;
 border-radius:50px;
+color:black;
 text-decoration:none;
 font-weight:bold;
-color:black;
 box-shadow:0 0 15px rgba(0,0,0,0.4);
 }
 
-iframe{
-border-radius:10px;
+/* ANIMAÇÃO */
+
+@keyframes fade{
+from{opacity:0;transform:translateY(30px);}
+to{opacity:1;transform:translateY(0);}
 }
 
 </style>
@@ -186,9 +242,7 @@ border-radius:10px;
 <header>
 
 <img src="logo.png">
-
-<h2>Seven Tech Solutions</h2>
-
+<h1>Seven Tech Solutions</h1>
 <p>Segurança eletrônica com tecnologia e confiança</p>
 
 </header>
@@ -198,28 +252,23 @@ border-radius:10px;
 <a href="#inicio">Início</a>
 <a href="#servicos">Serviços</a>
 <a href="#galeria">Instalações</a>
+<a href="#avaliacoes">Avaliações</a>
 <a href="#orcamento">Orçamento</a>
-<a href="#manutencao">Manutenção</a>
 <a href="#contato">Contato</a>
 
 </nav>
 
 <section class="hero" id="inicio">
 
-<h1>Segurança Eletrônica em Unaí MG</h1>
+<h2>Segurança Eletrônica em Unaí MG</h2>
 
-<p>
-Instalação profissional de câmeras, alarmes,
-cerca elétrica e motores de portão.
+<p>Instalação profissional de câmeras, alarmes, cerca elétrica e motores de portão.</p>
+
+<p style="color:#19c37d;font-size:20px;margin-top:10px;">
+⭐ Mais de 9 anos de experiência
 </p>
 
-<div class="experiencia">
-⭐ Mais de 9 anos de experiência
-</div>
-
-<a class="btn" href="#orcamento">
-Solicitar orçamento
-</a>
+<a class="btn" href="#orcamento">Solicitar orçamento</a>
 
 </section>
 
@@ -272,55 +321,58 @@ Solicitar orçamento
 
 </section>
 
+<section class="container" id="avaliacoes">
+
+<h2 class="section-title">Avaliações de Clientes</h2>
+
+<div id="listaAvaliacoes"></div>
+
+<h3 style="margin-top:30px;">Deixe sua avaliação</h3>
+
+<form onsubmit="salvarAvaliacao();return false;">
+
+<input id="nomeCliente" placeholder="Seu nome">
+
+<select id="nota">
+
+<option value="5">★★★★★ Excelente</option>
+<option value="4">★★★★ Muito bom</option>
+<option value="3">★★★ Bom</option>
+<option value="2">★★ Regular</option>
+<option value="1">★ Ruim</option>
+
+</select>
+
+<textarea id="comentario" placeholder="Seu comentário"></textarea>
+
+<button>Enviar avaliação</button>
+
+</form>
+
+</section>
+
 <section class="container" id="orcamento">
 
 <h2 class="section-title">Solicitar Orçamento</h2>
 
-<form onsubmit="enviarOrcamento(); return false;">
+<form onsubmit="enviarOrcamento();return false;">
 
 <input id="nome" placeholder="Seu nome">
 
 <input id="telefone" placeholder="Telefone">
 
 <select id="servico">
-<option>Câmeras de segurança</option>
+
+<option>Câmeras</option>
 <option>Alarme</option>
 <option>Cerca elétrica</option>
 <option>Motor de portão</option>
+
 </select>
 
 <textarea id="descricao" placeholder="Descreva o que precisa"></textarea>
 
-<button>Enviar Orçamento</button>
-
-</form>
-
-</section>
-
-<section class="container" id="manutencao">
-
-<h2 class="section-title">Solicitar Manutenção</h2>
-
-<form onsubmit="enviarManutencao(); return false;">
-
-<input id="nomeM" placeholder="Seu nome">
-
-<input id="telefoneM" placeholder="Telefone">
-
-<select id="equipamento">
-
-<option>Câmera</option>
-<option>Alarme</option>
-<option>Cerca elétrica</option>
-<option>Motor de portão</option>
-
-</select>
-
-<input id="endereco" placeholder="Endereço do local">
-
-<textarea id="problema" placeholder="Descreva o problema"></textarea>
-
-<button>Solicitar Manutenção</button>
+<button>Enviar orçamento</button>
 
 </form>
 
@@ -355,47 +407,78 @@ height="350">
 
 </footer>
 
-<a class="whatsapp-float" href="https://wa.me/5538998103514" target="_blank">
-Fale no WhatsApp
+<a class="whatsapp" href="https://wa.me/5538998103514" target="_blank">
+WhatsApp
 </a>
 
 <script>
 
+/* ORÇAMENTO */
+
 function enviarOrcamento(){
 
-var nome=document.getElementById("nome").value;
-var telefone=document.getElementById("telefone").value;
-var servico=document.getElementById("servico").value;
-var descricao=document.getElementById("descricao").value;
+var nome=document.getElementById("nome").value
+var telefone=document.getElementById("telefone").value
+var servico=document.getElementById("servico").value
+var descricao=document.getElementById("descricao").value
 
-var mensagem="Olá, gostaria de um orçamento:%0A%0A"
-+"Nome: "+nome+"%0A"
-+"Telefone: "+telefone+"%0A"
-+"Serviço: "+servico+"%0A"
-+"Descrição: "+descricao;
+var msg="Olá gostaria de um orçamento:%0A%0A"
++"Nome:"+nome+"%0A"
++"Telefone:"+telefone+"%0A"
++"Serviço:"+servico+"%0A"
++"Descrição:"+descricao
 
-window.open("https://wa.me/5538998103514?text="+mensagem);
+window.open("https://wa.me/5538998103514?text="+msg)
+
+}
+
+/* AVALIAÇÕES */
+
+function salvarAvaliacao(){
+
+var nome=document.getElementById("nomeCliente").value
+var nota=document.getElementById("nota").value
+var comentario=document.getElementById("comentario").value
+
+var avaliacao={
+nome:nome,
+nota:nota,
+comentario:comentario
+}
+
+var lista=JSON.parse(localStorage.getItem("avaliacoes")||"[]")
+
+lista.push(avaliacao)
+
+localStorage.setItem("avaliacoes",JSON.stringify(lista))
+
+mostrarAvaliacoes()
 
 }
 
-function enviarManutencao(){
+function mostrarAvaliacoes(){
 
-var nome=document.getElementById("nomeM").value;
-var telefone=document.getElementById("telefoneM").value;
-var equipamento=document.getElementById("equipamento").value;
-var endereco=document.getElementById("endereco").value;
-var problema=document.getElementById("problema").value;
+var lista=JSON.parse(localStorage.getItem("avaliacoes")||"[]")
 
-var mensagem="Olá, preciso de manutenção:%0A%0A"
-+"Nome: "+nome+"%0A"
-+"Telefone: "+telefone+"%0A"
-+"Equipamento: "+equipamento+"%0A"
-+"Endereço: "+endereco+"%0A"
-+"Problema: "+problema;
+var area=document.getElementById("listaAvaliacoes")
 
-window.open("https://wa.me/5538998103514?text="+mensagem);
+area.innerHTML=""
+
+lista.forEach(function(a){
+
+area.innerHTML+=`
+<div class="review">
+<div class="stars">${"★".repeat(a.nota)}</div>
+<strong>${a.nome}</strong>
+<p>${a.comentario}</p>
+</div>
+`
+
+})
 
 }
+
+mostrarAvaliacoes()
 
 </script>
 
