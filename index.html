@@ -1,89 +1,132 @@
-
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Seven Tech Solutions | Segurança Eletrônica em Unaí MG</title>
 
+<meta name="description" content="Instalação de câmeras, alarmes, cerca elétrica e motor de portão em Unaí MG. Mais de 9 anos de experiência.">
+
 <style>
 
-body{
+*{
 margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
 font-family:Arial;
-background:#071a22;
+background:linear-gradient(180deg,#0b0f14,#111a22);
 color:white;
 }
 
+/* HEADER */
+
 header{
+background:#05080c;
+padding:30px;
 text-align:center;
-padding:40px;
-background:#021016;
+border-bottom:4px solid #19c37d;
 }
 
 header img{
-width:180px;
-margin-bottom:10px;
+width:160px;
 }
 
+/* MENU */
+
 nav{
-background:#062733;
+background:#0f1f2b;
 padding:15px;
 text-align:center;
 }
 
 nav a{
 color:white;
-margin:15px;
+margin:0 15px;
 text-decoration:none;
 font-weight:bold;
 }
 
+nav a:hover{
+color:#19c37d;
+}
+
+/* HERO */
+
 .hero{
+padding:100px 20px;
 text-align:center;
-padding:80px 20px;
+animation:fade 1.5s;
 }
 
 .hero h1{
-color:#00ff9c;
-font-size:38px;
+font-size:40px;
+color:#19c37d;
 }
 
-.botao{
-background:#00c77f;
-padding:15px 30px;
-border-radius:8px;
+.hero p{
+margin-top:10px;
+font-size:18px;
+}
+
+.btn{
 display:inline-block;
-margin-top:20px;
+margin-top:25px;
+padding:14px 28px;
+background:#19c37d;
 color:black;
 font-weight:bold;
+border-radius:8px;
 text-decoration:none;
+transition:.3s;
 }
+
+.btn:hover{
+transform:scale(1.05);
+}
+
+/* CONTAINER */
 
 .container{
 max-width:1100px;
 margin:auto;
-padding:40px 20px;
+padding:70px 20px;
 }
 
 .section-title{
 text-align:center;
-color:#00ff9c;
-margin-bottom:30px;
+font-size:30px;
+margin-bottom:40px;
+color:#19c37d;
 }
 
-.cards{
+/* GRID */
+
+.grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:20px;
+grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+gap:25px;
 }
+
+/* CARD */
 
 .card{
-background:#0b2d3a;
+background:#162734;
 padding:20px;
 border-radius:10px;
+border:1px solid #2b4456;
 text-align:center;
+transition:.3s;
+}
+
+.card:hover{
+transform:translateY(-8px);
+border-color:#19c37d;
 }
 
 .card img{
@@ -92,53 +135,97 @@ height:160px;
 object-fit:cover;
 border-radius:8px;
 margin-bottom:10px;
-transition:0.4s;
 }
 
-.card:hover img{
-transform:scale(1.08);
+/* GALERIA */
+
+.gallery img{
+width:100%;
+border-radius:10px;
 }
+
+/* FORM */
 
 form{
-display:grid;
-gap:10px;
+background:#162734;
+padding:25px;
+border-radius:10px;
+border:1px solid #2b4456;
 }
 
-input,textarea,select{
-padding:12px;
+input,select,textarea{
+width:100%;
+padding:10px;
+margin-bottom:15px;
 border-radius:6px;
 border:none;
 }
 
 button{
-background:#00c77f;
-padding:12px;
+background:#19c37d;
 border:none;
+padding:12px;
 border-radius:6px;
 font-weight:bold;
 cursor:pointer;
 }
 
-.whatsapp{
-position:fixed;
-right:20px;
-bottom:20px;
-background:#25D366;
-padding:15px 20px;
-border-radius:30px;
-color:white;
-font-weight:bold;
-text-decoration:none;
+button:hover{
+background:#14a469;
 }
 
-footer{
-background:#021016;
-text-align:center;
+/* AVALIAÇÕES */
+
+.review{
+background:#162734;
 padding:20px;
-margin-top:40px;
+border-radius:10px;
+border:1px solid #2b4456;
+margin-bottom:20px;
+}
+
+.stars{
+color:gold;
+}
+
+/* MAPA */
+
+iframe{
+border-radius:10px;
+}
+
+/* FOOTER */
+
+footer{
+background:#020406;
+padding:30px;
+text-align:center;
+color:#9aa6af;
+}
+
+/* WHATSAPP */
+
+.whatsapp{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25d366;
+padding:15px 20px;
+border-radius:50px;
+color:black;
+text-decoration:none;
+font-weight:bold;
+}
+
+/* ANIMAÇÃO */
+
+@keyframes fade{
+from{opacity:0;transform:translateY(20px);}
+to{opacity:1;transform:translateY(0);}
 }
 
 </style>
+
 </head>
 
 <body>
@@ -148,14 +235,16 @@ margin-top:40px;
 <img src="logo.png">
 
 <h2>Seven Tech Solutions</h2>
+
 <p>Segurança eletrônica com tecnologia e confiança</p>
 
 </header>
 
 <nav>
 
-<a href="#">Inicio</a>
+<a href="#inicio">Início</a>
 <a href="#servicos">Serviços</a>
+<a href="#galeria">Instalações</a>
 <a href="#avaliacoes">Avaliações</a>
 <a href="#orcamento">Orçamento</a>
 <a href="#manutencao">Manutenção</a>
@@ -163,17 +252,17 @@ margin-top:40px;
 
 </nav>
 
-<section class="hero">
+<section class="hero" id="inicio">
 
 <h1>Segurança eletrônica em Unaí MG</h1>
 
 <p>Instalação profissional de câmeras, alarmes, cerca elétrica e motor de portão.</p>
 
+<p style="color:#19c37d;margin-top:10px;font-size:20px;">
 ⭐ Mais de 9 anos de experiência
+</p>
 
-<br><br>
-
-<a class="botao" href="#orcamento">Solicitar orçamento</a>
+<a class="btn" href="#orcamento">Solicitar orçamento</a>
 
 </section>
 
@@ -181,27 +270,46 @@ margin-top:40px;
 
 <h2 class="section-title">Nossos Serviços</h2>
 
-<div class="cards">
+<div class="grid">
 
 <div class="card">
 <img src="camera.jpg">
-<h3>Câmeras de segurança</h3>
+<h3>Câmeras de Segurança</h3>
+<p>Monitoramento pelo celular.</p>
 </div>
 
 <div class="card">
 <img src="alarme.jpg">
-<h3>Sistemas de alarme</h3>
+<h3>Sistema de Alarme</h3>
+<p>Proteção contra invasões.</p>
 </div>
 
 <div class="card">
 <img src="cerca.jpg">
-<h3>Cerca elétrica</h3>
+<h3>Cerca Elétrica</h3>
+<p>Proteção perimetral.</p>
 </div>
 
 <div class="card">
-<img src="portao.jpg">
-<h3>Motor de portão</h3>
+<img src="motor.jpg">
+<h3>Motor de Portão</h3>
+<p>Automação de portões.</p>
 </div>
+
+</div>
+
+</section>
+
+<section class="container" id="galeria">
+
+<h2 class="section-title">Instalações Realizadas</h2>
+
+<div class="grid gallery">
+
+<img src="instalacao1.jpg">
+<img src="instalacao2.jpg">
+<img src="instalacao3.jpg">
+<img src="instalacao4.jpg">
 
 </div>
 
@@ -209,16 +317,35 @@ margin-top:40px;
 
 <section class="container" id="avaliacoes">
 
-<h2 class="section-title">Avaliações</h2>
+<h2 class="section-title">Avaliações de Clientes</h2>
 
-<p>⭐⭐⭐⭐⭐ Excelente serviço!</p>
-<p>⭐⭐⭐⭐⭐ Atendimento rápido e profissional.</p>
+<div id="listaAvaliacoes"></div>
+
+<h3 style="margin-top:30px;">Deixe sua avaliação</h3>
+
+<form onsubmit="salvarAvaliacao();return false;">
+
+<input id="nomeCliente" placeholder="Seu nome">
+
+<select id="nota">
+<option value="5">★★★★★ Excelente</option>
+<option value="4">★★★★ Muito bom</option>
+<option value="3">★★★ Bom</option>
+<option value="2">★★ Regular</option>
+<option value="1">★ Ruim</option>
+</select>
+
+<textarea id="comentario" placeholder="Seu comentário"></textarea>
+
+<button>Enviar avaliação</button>
+
+</form>
 
 </section>
 
 <section class="container" id="orcamento">
 
-<h2 class="section-title">Solicitar orçamento</h2>
+<h2 class="section-title">Solicitar Orçamento</h2>
 
 <form onsubmit="enviarOrcamento();return false;">
 
@@ -227,10 +354,12 @@ margin-top:40px;
 <input id="telefone" placeholder="Telefone">
 
 <select id="servico">
+
 <option>Câmeras</option>
 <option>Alarme</option>
 <option>Cerca elétrica</option>
 <option>Motor de portão</option>
+
 </select>
 
 <textarea id="descricao" placeholder="Descreva o que precisa"></textarea>
@@ -243,7 +372,7 @@ margin-top:40px;
 
 <section class="container" id="manutencao">
 
-<h2 class="section-title">Solicitar manutenção</h2>
+<h2 class="section-title">Solicitar Manutenção</h2>
 
 <form onsubmit="enviarManutencao();return false;">
 
@@ -252,13 +381,15 @@ margin-top:40px;
 <input id="telefoneM" placeholder="Telefone">
 
 <select id="equipamento">
+
 <option>Câmera</option>
 <option>Alarme</option>
 <option>Cerca elétrica</option>
 <option>Motor de portão</option>
+
 </select>
 
-<input id="endereco" placeholder="Endereço">
+<input id="endereco" placeholder="Endereço do local">
 
 <textarea id="problema" placeholder="Descreva o problema"></textarea>
 
@@ -280,19 +411,30 @@ height="350">
 
 </section>
 
-<footer id="contato">
+<section class="container" id="contato">
 
-<p>📞 (38) 99810-3514</p>
-<p>📍 Unaí - MG</p>
-<p>Seven Tech Solutions</p>
+<h2 class="section-title">Contato</h2>
+
+<p><strong>Jhonatan Gama</strong></p>
+<p>Telefone: (38) 99810-3514</p>
+<p>Instagram: @seventech_solutions</p>
+
+</section>
+
+<footer>
+
+<p>© Seven Tech Solutions</p>
+<p>Segurança eletrônica em Unaí MG</p>
 
 </footer>
 
-<a class="whatsapp"
-href="https://wa.me/5538998103514"
-target="_blank">WhatsApp</a>
+<a class="whatsapp" href="https://wa.me/5538998103514" target="_blank">
+WhatsApp
+</a>
 
 <script>
+
+/* ORÇAMENTO */
 
 function enviarOrcamento(){
 
@@ -310,6 +452,8 @@ var msg="Olá gostaria de um orçamento:%0A%0A"
 window.open("https://wa.me/5538998103514?text="+msg)
 
 }
+
+/* MANUTENÇÃO */
 
 function enviarManutencao(){
 
@@ -330,13 +474,51 @@ window.open("https://wa.me/5538998103514?text="+msg)
 
 }
 
-</script>
+/* AVALIAÇÕES */
 
-<!--
-Programado por Jhonatan Gama
-Seven Tech Solutions
-Provérbios 16:3
--->
+function salvarAvaliacao(){
+
+var nome=document.getElementById("nomeCliente").value
+var nota=document.getElementById("nota").value
+var comentario=document.getElementById("comentario").value
+
+var avaliacao={nome:nome,nota:nota,comentario:comentario}
+
+var lista=JSON.parse(localStorage.getItem("avaliacoes")||"[]")
+
+lista.push(avaliacao)
+
+localStorage.setItem("avaliacoes",JSON.stringify(lista))
+
+mostrarAvaliacoes()
+
+}
+
+function mostrarAvaliacoes(){
+
+var lista=JSON.parse(localStorage.getItem("avaliacoes")||"[]")
+
+var area=document.getElementById("listaAvaliacoes")
+
+area.innerHTML=""
+
+lista.forEach(function(a){
+
+area.innerHTML+=`
+<div class="review">
+<div class="stars">${"★".repeat(a.nota)}</div>
+<strong>${a.nome}</strong>
+<p>${a.comentario}</p>
+</div>
+`
+
+})
+
+}
+
+mostrarAvaliacoes()
+
+</script>
 
 </body>
 </html>
