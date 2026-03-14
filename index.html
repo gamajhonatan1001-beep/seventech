@@ -1,523 +1,362 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Seven Tech Solutions | Starlink, Redes WiFi e Tecnologia em Unaí MG</title>
+<meta name="description" content="Instalação de Starlink, redes WiFi, roteadores, nobreak e suporte em tecnologia em Unaí MG.">
 
-<title>Seven Tech Solutions | Segurança Eletrônica em Unaí MG</title>
-
-<meta name="description" content="Instalação de câmeras, alarmes, cerca elétrica e motor de portão em Unaí MG. Mais de 9 anos de experiência.">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
+*{margin:0;padding:0;box-sizing:border-box}
 
 body{
-font-family:Arial;
-background:linear-gradient(180deg,#0b0f14,#111a22);
+font-family:'Poppins',sans-serif;
+background:#050505;
 color:white;
+overflow-x:hidden
 }
 
 /* HEADER */
-
 header{
-background:#05080c;
-padding:30px;
-text-align:center;
-border-bottom:4px solid #19c37d;
+position:fixed;
+width:100%;
+top:0;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:18px 40px;
+background:rgba(0,0,0,.85);
+backdrop-filter:blur(10px);
+z-index:1000
 }
 
-header img{
-width:160px;
-}
-
-/* MENU */
-
-nav{
-background:#0f1f2b;
-padding:15px;
-text-align:center;
+.logo{
+font-family:'Orbitron',sans-serif;
+font-size:22px;
+color:#00ff88;
+letter-spacing:2px
 }
 
 nav a{
-color:white;
-margin:0 15px;
+margin-left:25px;
 text-decoration:none;
-font-weight:bold;
+color:white;
+font-size:14px;
+transition:.3s
 }
 
-nav a:hover{
-color:#19c37d;
-}
+nav a:hover{color:#00ff88}
 
 /* HERO */
-
 .hero{
-padding:100px 20px;
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
 text-align:center;
-animation:fade 1.5s;
+padding:20px;
+background:radial-gradient(circle at top,#003322,#000);
+animation:bgmove 10s infinite alternate
+}
+
+@keyframes bgmove{
+0%{background-position:0 0}
+100%{background-position:100% 100%}
 }
 
 .hero h1{
-font-size:40px;
-color:#19c37d;
+font-family:'Orbitron';
+font-size:48px;
+color:#00ff88;
+max-width:800px
 }
 
 .hero p{
-margin-top:10px;
-font-size:18px;
+margin:20px 0;
+max-width:600px;
+opacity:.9
 }
 
 .btn{
-display:inline-block;
-margin-top:25px;
-padding:14px 28px;
-background:#19c37d;
+background:#00ff88;
 color:black;
-font-weight:bold;
-border-radius:8px;
+padding:14px 26px;
+border-radius:30px;
 text-decoration:none;
-transition:.3s;
+font-weight:600;
+margin-top:10px;
+transition:.3s
 }
 
 .btn:hover{
-transform:scale(1.05);
+transform:scale(1.08);
+box-shadow:0 0 20px #00ff88
 }
 
-/* CONTAINER */
-
-.container{
-max-width:1100px;
+/* SECTIONS */
+.section{
+padding:110px 20px;
+max-width:1200px;
 margin:auto;
-padding:70px 20px;
+text-align:center
 }
 
-.section-title{
-text-align:center;
-font-size:30px;
-margin-bottom:40px;
-color:#19c37d;
+.section h2{
+font-size:32px;
+margin-bottom:50px;
+color:#00ff88;
+font-family:'Orbitron'
 }
 
-/* GRID */
-
-.grid{
+/* SERVICES */
+.services{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
-gap:25px;
+gap:25px
 }
 
-/* CARD */
-
 .card{
-background:#162734;
-padding:20px;
-border-radius:10px;
-border:1px solid #2b4456;
-text-align:center;
-transition:.3s;
+background:#0f0f0f;
+padding:30px 20px;
+border-radius:15px;
+transition:.4s;
+box-shadow:0 0 10px rgba(0,255,136,.1)
 }
 
 .card:hover{
-transform:translateY(-8px);
-border-color:#19c37d;
+transform:translateY(-10px) scale(1.03);
+box-shadow:0 0 25px rgba(0,255,136,.5)
 }
 
-.card img{
-width:100%;
-height:160px;
-object-fit:cover;
-border-radius:8px;
-margin-bottom:10px;
+.card h3{color:#00ff88;margin-bottom:10px}
+
+/* GALLERY */
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:15px
 }
 
-/* GALERIA */
-
-.gallery img{
-width:100%;
+.gallery div{
+height:200px;
 border-radius:10px;
+background:linear-gradient(140deg,#111,#003322);
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:14px;
+color:#ccc
 }
 
 /* FORM */
-
 form{
-background:#162734;
-padding:25px;
-border-radius:10px;
-border:1px solid #2b4456;
+max-width:450px;
+margin:auto;
+display:flex;
+flex-direction:column;
+gap:12px
 }
 
-input,select,textarea{
-width:100%;
-padding:10px;
-margin-bottom:15px;
-border-radius:6px;
+input,textarea,select{
+padding:12px;
 border:none;
+border-radius:8px;
+font-family:'Poppins'
 }
 
 button{
-background:#19c37d;
+padding:14px;
 border:none;
-padding:12px;
-border-radius:6px;
-font-weight:bold;
-cursor:pointer;
+border-radius:30px;
+background:#00ff88;
+font-weight:600;
+cursor:pointer
 }
 
-button:hover{
-background:#14a469;
-}
+button:hover{box-shadow:0 0 15px #00ff88}
 
-/* AVALIAÇÕES */
-
+/* AVALIACOES */
 .review{
-background:#162734;
-padding:20px;
+background:#111;
+padding:15px;
 border-radius:10px;
-border:1px solid #2b4456;
-margin-bottom:20px;
-}
-
-.stars{
-color:gold;
-}
-
-/* MAPA */
-
-iframe{
-border-radius:10px;
+margin:10px auto;
+max-width:500px
 }
 
 /* FOOTER */
-
 footer{
-background:#020406;
-padding:30px;
+background:#000;
+padding:40px 20px;
 text-align:center;
-color:#9aa6af;
+margin-top:40px
 }
 
 /* WHATSAPP */
-
 .whatsapp{
 position:fixed;
-bottom:20px;
-right:20px;
+bottom:25px;
+right:25px;
+width:65px;
+height:65px;
+border-radius:50%;
 background:#25d366;
-padding:15px 20px;
-border-radius:50px;
-color:black;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:28px;
 text-decoration:none;
-font-weight:bold;
+color:white;
+box-shadow:0 0 20px #000
 }
 
-/* ANIMAÇÃO */
+iframe{width:100%;height:350px;border:0;border-radius:10px}
 
-@keyframes fade{
-from{opacity:0;transform:translateY(20px);}
-to{opacity:1;transform:translateY(0);}
+@media(max-width:700px){
+.hero h1{font-size:32px}
+nav{display:none}
 }
-
 </style>
-
 </head>
 
 <body>
 
 <header>
-
-<img src="logo.png">
-
-<h2>Seven Tech Solutions</h2>
-
-<p>Segurança eletrônica com tecnologia e confiança</p>
-
-</header>
-
+<div class="logo">Seven Tech</div>
 <nav>
-
 <a href="#inicio">Início</a>
 <a href="#servicos">Serviços</a>
-<a href="#galeria">Instalações</a>
-<a href="#avaliacoes">Avaliações</a>
+<a href="#galeria">Galeria</a>
 <a href="#orcamento">Orçamento</a>
-<a href="#manutencao">Manutenção</a>
+<a href="#avaliacoes">Avaliações</a>
 <a href="#contato">Contato</a>
-
 </nav>
+</header>
 
 <section class="hero" id="inicio">
-
-<h1>Segurança eletrônica em Unaí MG</h1>
-
-<p>Instalação profissional de câmeras, alarmes, cerca elétrica e motor de portão.</p>
-
-<p style="color:#19c37d;margin-top:10px;font-size:20px;">
-⭐ Mais de 9 anos de experiência
-</p>
-
-<a class="btn" href="#orcamento">Solicitar orçamento</a>
-
+<h1>Especialistas em Starlink e Redes WiFi</h1>
+<p>Instalação profissional de internet Starlink, roteadores, Access Point e infraestrutura de redes em Unaí MG.</p>
+<a class="btn" href="https://wa.me/5538998103514">Solicitar Orçamento</a>
 </section>
 
-<section class="container" id="servicos">
-
-<h2 class="section-title">Nossos Serviços</h2>
-
-<div class="grid">
-
-<div class="card">
-<img src="camera.jpg">
-<h3>Câmeras de Segurança</h3>
-<p>Monitoramento pelo celular.</p>
+<section class="section" id="servicos">
+<h2>Serviços</h2>
+<div class="services">
+<div class="card"><h3>Instalação Starlink</h3><p>Venda e instalação completa da internet via satélite.</p></div>
+<div class="card"><h3>Roteadores WiFi</h3><p>Configuração profissional e otimização de sinal.</p></div>
+<div class="card"><h3>Access Point</h3><p>Ampliação de cobertura WiFi.</p></div>
+<div class="card"><h3>Nobreak em Rede</h3><p>Proteção de equipamentos contra quedas de energia.</p></div>
+<div class="card"><h3>Infraestrutura de Rede</h3><p>Instalação e organização de redes estruturadas.</p></div>
+<div class="card"><h3>Impressora em Rede</h3><p>Compartilhamento entre computadores.</p></div>
+<div class="card"><h3>Assessoria em Redes</h3><p>Consultoria tecnológica profissional.</p></div>
 </div>
+</section>
+
+<section class="section" id="loja">
+<h2>Comprar Starlink</h2>
+<div class="services">
 
 <div class="card">
-<img src="alarme.jpg">
-<h3>Sistema de Alarme</h3>
-<p>Proteção contra invasões.</p>
+<h3>Kit Starlink Original</h3>
+<p>Internet via satélite de alta velocidade. Produto original com suporte e instalação pela Seven Tech Solutions.</p>
+<a class="btn" href="https://meli.la/1KigiMx" target="_blank">Comprar no Mercado Livre</a>
 </div>
 
 <div class="card">
-<img src="cerca.jpg">
-<h3>Cerca Elétrica</h3>
-<p>Proteção perimetral.</p>
-</div>
-
-<div class="card">
-<img src="motor.jpg">
-<h3>Motor de Portão</h3>
-<p>Automação de portões.</p>
+<h3>Starlink + Instalação</h3>
+<p>Compre o equipamento e solicite a instalação profissional em Unaí MG.</p>
+<a class="btn" href="https://wa.me/5538998103514?text=Olá%20quero%20comprar%20Starlink%20com%20instalação">Comprar + Instalação</a>
 </div>
 
 </div>
-
 </section>
 
-<section class="container" id="galeria">
-
-<h2 class="section-title">Instalações Realizadas</h2>
-
-<div class="grid gallery">
-
-<img src="instalacao1.jpg">
-<img src="instalacao2.jpg">
-<img src="instalacao3.jpg">
-<img src="instalacao4.jpg">
-
+<section class="section" id="galeria">
+<h2>Galeria</h2>
+<div class="gallery">
+<div>Instalação Starlink</div>
+<div>Rede WiFi</div>
+<div>Infraestrutura</div>
+<div>Equipamentos</div>
 </div>
-
 </section>
 
-<section class="container" id="avaliacoes">
-
-<h2 class="section-title">Avaliações de Clientes</h2>
-
-<div id="listaAvaliacoes"></div>
-
-<h3 style="margin-top:30px;">Deixe sua avaliação</h3>
-
-<form onsubmit="salvarAvaliacao();return false;">
-
-<input id="nomeCliente" placeholder="Seu nome">
-
-<select id="nota">
-<option value="5">★★★★★ Excelente</option>
-<option value="4">★★★★ Muito bom</option>
-<option value="3">★★★ Bom</option>
-<option value="2">★★ Regular</option>
-<option value="1">★ Ruim</option>
-</select>
-
-<textarea id="comentario" placeholder="Seu comentário"></textarea>
-
-<button>Enviar avaliação</button>
-
-</form>
-
-</section>
-
-<section class="container" id="orcamento">
-
-<h2 class="section-title">Solicitar Orçamento</h2>
-
-<form onsubmit="enviarOrcamento();return false;">
-
-<input id="nome" placeholder="Seu nome">
-
-<input id="telefone" placeholder="Telefone">
-
+<section class="section" id="orcamento">
+<h2>Solicitar Orçamento</h2>
+<form onsubmit="enviarWhats();return false;">
+<input id="nome" placeholder="Seu nome" required>
+<input id="telefone" placeholder="Telefone" required>
 <select id="servico">
-
-<option>Câmeras</option>
-<option>Alarme</option>
-<option>Cerca elétrica</option>
-<option>Motor de portão</option>
-
+<option>Instalação Starlink</option>
+<option>Roteador WiFi</option>
+<option>Access Point</option>
+<option>Nobreak em rede</option>
+<option>Infraestrutura de rede</option>
 </select>
-
-<textarea id="descricao" placeholder="Descreva o que precisa"></textarea>
-
-<button>Enviar orçamento</button>
-
+<textarea id="msg" placeholder="Mensagem"></textarea>
+<button>Enviar Pedido</button>
 </form>
-
 </section>
 
-<section class="container" id="manutencao">
-
-<h2 class="section-title">Solicitar Manutenção</h2>
-
-<form onsubmit="enviarManutencao();return false;">
-
-<input id="nomeM" placeholder="Seu nome">
-
-<input id="telefoneM" placeholder="Telefone">
-
-<select id="equipamento">
-
-<option>Câmera</option>
-<option>Alarme</option>
-<option>Cerca elétrica</option>
-<option>Motor de portão</option>
-
-</select>
-
-<input id="endereco" placeholder="Endereço do local">
-
-<textarea id="problema" placeholder="Descreva o problema"></textarea>
-
-<button>Solicitar manutenção</button>
-
+<section class="section" id="avaliacoes">
+<h2>Avaliações</h2>
+<form onsubmit="salvar();return false;">
+<input id="cliente" placeholder="Seu nome">
+<textarea id="comentario" placeholder="Comentário"></textarea>
+<button>Enviar Avaliação</button>
 </form>
-
+<div id="lista"></div>
 </section>
 
-<section class="container">
+<section class="section" id="contato">
+<h2>Contato</h2>
+<p><b>WhatsApp:</b> (38) 99810-3514</p>
+<p><b>Instagram:</b> @seventech_solutions</p>
+<p><b>Cidade:</b> Unaí - MG</p>
 
-<h2 class="section-title">Área de atendimento</h2>
-
-<iframe
-src="https://maps.google.com/maps?q=Unaí%20MG&t=&z=13&ie=UTF8&iwloc=&output=embed"
-width="100%"
-height="350">
-</iframe>
-
-</section>
-
-<section class="container" id="contato">
-
-<h2 class="section-title">Contato</h2>
-
-<p><strong>Jhonatan Gama</strong></p>
-<p>Telefone: (38) 99810-3514</p>
-<p>Instagram: @seventech_solutions</p>
-
+<iframe src="https://maps.google.com/maps?q=unai%20mg&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
 </section>
 
 <footer>
-
-<p>© Seven Tech Solutions</p>
-<p>Segurança eletrônica em Unaí MG</p>
-
+<p>Seven Tech Solutions</p>
+<p>Tecnologia e Redes em Unaí MG</p>
+<p>© 2026 Todos os direitos reservados</p>
 </footer>
 
-<a class="whatsapp" href="https://wa.me/5538998103514" target="_blank">
-WhatsApp
-</a>
+<a class="whatsapp" href="https://wa.me/5538998103514">💬</a>
 
 <script>
-
-/* ORÇAMENTO */
-
-function enviarOrcamento(){
-
-var nome=document.getElementById("nome").value
-var telefone=document.getElementById("telefone").value
-var servico=document.getElementById("servico").value
-var descricao=document.getElementById("descricao").value
-
-var msg="Olá gostaria de um orçamento:%0A%0A"
-+"Nome:"+nome+"%0A"
-+"Telefone:"+telefone+"%0A"
-+"Serviço:"+servico+"%0A"
-+"Descrição:"+descricao
-
-window.open("https://wa.me/5538998103514?text="+msg)
-
+function enviarWhats(){
+let n=document.getElementById('nome').value
+let t=document.getElementById('telefone').value
+let s=document.getElementById('servico').value
+let m=document.getElementById('msg').value
+let texto=`Olá, meu nome é ${n}%0ATelefone: ${t}%0AServiço: ${s}%0A${m}`
+window.open(`https://wa.me/5538998103514?text=${texto}`)
 }
 
-/* MANUTENÇÃO */
-
-function enviarManutencao(){
-
-var nome=document.getElementById("nomeM").value
-var telefone=document.getElementById("telefoneM").value
-var equipamento=document.getElementById("equipamento").value
-var endereco=document.getElementById("endereco").value
-var problema=document.getElementById("problema").value
-
-var msg="Olá preciso de manutenção:%0A%0A"
-+"Nome:"+nome+"%0A"
-+"Telefone:"+telefone+"%0A"
-+"Equipamento:"+equipamento+"%0A"
-+"Endereço:"+endereco+"%0A"
-+"Problema:"+problema
-
-window.open("https://wa.me/5538998103514?text="+msg)
-
+function salvar(){
+let nome=document.getElementById('cliente').value
+let c=document.getElementById('comentario').value
+let dados=JSON.parse(localStorage.getItem('avaliacoes')||'[]')
+dados.push({nome,c})
+localStorage.setItem('avaliacoes',JSON.stringify(dados))
+mostrar()
 }
 
-/* AVALIAÇÕES */
-
-function salvarAvaliacao(){
-
-var nome=document.getElementById("nomeCliente").value
-var nota=document.getElementById("nota").value
-var comentario=document.getElementById("comentario").value
-
-var avaliacao={nome:nome,nota:nota,comentario:comentario}
-
-var lista=JSON.parse(localStorage.getItem("avaliacoes")||"[]")
-
-lista.push(avaliacao)
-
-localStorage.setItem("avaliacoes",JSON.stringify(lista))
-
-mostrarAvaliacoes()
-
-}
-
-function mostrarAvaliacoes(){
-
-var lista=JSON.parse(localStorage.getItem("avaliacoes")||"[]")
-
-var area=document.getElementById("listaAvaliacoes")
-
-area.innerHTML=""
-
-lista.forEach(function(a){
-
-area.innerHTML+=`
-<div class="review">
-<div class="stars">${"★".repeat(a.nota)}</div>
-<strong>${a.nome}</strong>
-<p>${a.comentario}</p>
-</div>
-`
-
+function mostrar(){
+let area=document.getElementById('lista')
+let dados=JSON.parse(localStorage.getItem('avaliacoes')||'[]')
+area.innerHTML=''
+dados.forEach(a=>{
+area.innerHTML+=`<div class='review'><b>${a.nome}</b><p>${a.c}</p></div>`
 })
-
 }
 
-mostrarAvaliacoes()
-
+mostrar()
 </script>
 
 </body>
