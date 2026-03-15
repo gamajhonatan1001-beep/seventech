@@ -32,11 +32,8 @@ backdrop-filter:blur(10px);
 z-index:1000
 }
 
-.logo{
-font-family:'Orbitron',sans-serif;
-font-size:22px;
-color:#00ff88;
-letter-spacing:2px
+.logo img{
+height:45px;
 }
 
 nav a{
@@ -59,12 +56,6 @@ align-items:center;
 text-align:center;
 padding:20px;
 background:radial-gradient(circle at top,#003322,#000);
-animation:bgmove 10s infinite alternate
-}
-
-@keyframes bgmove{
-0%{background-position:0 0}
-100%{background-position:100% 100%}
 }
 
 .hero h1{
@@ -133,24 +124,6 @@ box-shadow:0 0 25px rgba(0,255,136,.5)
 
 .card h3{color:#00ff88;margin-bottom:10px}
 
-/* GALLERY */
-.gallery{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:15px
-}
-
-.gallery div{
-height:200px;
-border-radius:10px;
-background:linear-gradient(140deg,#111,#003322);
-display:flex;
-align-items:center;
-justify-content:center;
-font-size:14px;
-color:#ccc
-}
-
 /* FORM */
 form{
 max-width:450px;
@@ -177,15 +150,6 @@ cursor:pointer
 }
 
 button:hover{box-shadow:0 0 15px #00ff88}
-
-/* AVALIACOES */
-.review{
-background:#111;
-padding:15px;
-border-radius:10px;
-margin:10px auto;
-max-width:500px
-}
 
 /* FOOTER */
 footer{
@@ -225,13 +189,15 @@ nav{display:none}
 <body>
 
 <header>
-<div class="logo">Seven Tech</div>
+<div class="logo">
+<img src="logo.png" alt="Seven Tech Solutions">
+</div>
+
 <nav>
 <a href="#inicio">Início</a>
 <a href="#servicos">Serviços</a>
-<a href="#galeria">Galeria</a>
+<a href="#loja">Loja</a>
 <a href="#orcamento">Orçamento</a>
-<a href="#avaliacoes">Avaliações</a>
 <a href="#contato">Contato</a>
 </nav>
 </header>
@@ -245,50 +211,57 @@ nav{display:none}
 <section class="section" id="servicos">
 <h2>Serviços</h2>
 <div class="services">
+
 <div class="card"><h3>Instalação Starlink</h3><p>Venda e instalação completa da internet via satélite.</p></div>
+
 <div class="card"><h3>Roteadores WiFi</h3><p>Configuração profissional e otimização de sinal.</p></div>
+
 <div class="card"><h3>Access Point</h3><p>Ampliação de cobertura WiFi.</p></div>
+
 <div class="card"><h3>Nobreak em Rede</h3><p>Proteção de equipamentos contra quedas de energia.</p></div>
+
 <div class="card"><h3>Infraestrutura de Rede</h3><p>Instalação e organização de redes estruturadas.</p></div>
+
 <div class="card"><h3>Impressora em Rede</h3><p>Compartilhamento entre computadores.</p></div>
+
 <div class="card"><h3>Assessoria em Redes</h3><p>Consultoria tecnológica profissional.</p></div>
+
 </div>
 </section>
 
 <section class="section" id="loja">
-<h2>Comprar Starlink</h2>
+<h2>Loja de Tecnologia</h2>
+
 <div class="services">
 
 <div class="card">
 <h3>Kit Starlink Original</h3>
-<p>Internet via satélite de alta velocidade. Produto original com suporte e instalação pela Seven Tech Solutions.</p>
-<a class="btn" href="https://meli.la/1KigiMx" target="_blank">Comprar no Mercado Livre</a>
+<p>Internet via satélite de alta velocidade.</p>
+<a class="btn" href="https://meli.la/1KigiMx" target="_blank">Comprar Starlink</a>
+</div>
+
+<div class="card">
+<h3>Produtos Recomendados</h3>
+<p>Veja equipamentos de rede, roteadores e tecnologia recomendados pela Seven Tech.</p>
+<a class="btn" href="https://meli.la/2P4WsXF" target="_blank">Ver Produtos</a>
 </div>
 
 <div class="card">
 <h3>Starlink + Instalação</h3>
-<p>Compre o equipamento e solicite a instalação profissional em Unaí MG.</p>
+<p>Compre o equipamento e solicite instalação profissional.</p>
 <a class="btn" href="https://wa.me/5538998103514?text=Olá%20quero%20comprar%20Starlink%20com%20instalação">Comprar + Instalação</a>
 </div>
 
 </div>
 </section>
 
-<section class="section" id="galeria">
-<h2>Galeria</h2>
-<div class="gallery">
-<div>Instalação Starlink</div>
-<div>Rede WiFi</div>
-<div>Infraestrutura</div>
-<div>Equipamentos</div>
-</div>
-</section>
-
 <section class="section" id="orcamento">
 <h2>Solicitar Orçamento</h2>
+
 <form onsubmit="enviarWhats();return false;">
 <input id="nome" placeholder="Seu nome" required>
 <input id="telefone" placeholder="Telefone" required>
+
 <select id="servico">
 <option>Instalação Starlink</option>
 <option>Roteador WiFi</option>
@@ -296,28 +269,23 @@ nav{display:none}
 <option>Nobreak em rede</option>
 <option>Infraestrutura de rede</option>
 </select>
-<textarea id="msg" placeholder="Mensagem"></textarea>
-<button>Enviar Pedido</button>
-</form>
-</section>
 
-<section class="section" id="avaliacoes">
-<h2>Avaliações</h2>
-<form onsubmit="salvar();return false;">
-<input id="cliente" placeholder="Seu nome">
-<textarea id="comentario" placeholder="Comentário"></textarea>
-<button>Enviar Avaliação</button>
+<textarea id="msg" placeholder="Mensagem"></textarea>
+
+<button>Enviar Pedido</button>
+
 </form>
-<div id="lista"></div>
 </section>
 
 <section class="section" id="contato">
 <h2>Contato</h2>
+
 <p><b>WhatsApp:</b> (38) 99810-3514</p>
 <p><b>Instagram:</b> @seventech_solutions</p>
 <p><b>Cidade:</b> Unaí - MG</p>
 
 <iframe src="https://maps.google.com/maps?q=unai%20mg&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
+
 </section>
 
 <footer>
@@ -330,33 +298,17 @@ nav{display:none}
 
 <script>
 function enviarWhats(){
+
 let n=document.getElementById('nome').value
 let t=document.getElementById('telefone').value
 let s=document.getElementById('servico').value
 let m=document.getElementById('msg').value
+
 let texto=`Olá, meu nome é ${n}%0ATelefone: ${t}%0AServiço: ${s}%0A${m}`
+
 window.open(`https://wa.me/5538998103514?text=${texto}`)
-}
 
-function salvar(){
-let nome=document.getElementById('cliente').value
-let c=document.getElementById('comentario').value
-let dados=JSON.parse(localStorage.getItem('avaliacoes')||'[]')
-dados.push({nome,c})
-localStorage.setItem('avaliacoes',JSON.stringify(dados))
-mostrar()
 }
-
-function mostrar(){
-let area=document.getElementById('lista')
-let dados=JSON.parse(localStorage.getItem('avaliacoes')||'[]')
-area.innerHTML=''
-dados.forEach(a=>{
-area.innerHTML+=`<div class='review'><b>${a.nome}</b><p>${a.c}</p></div>`
-})
-}
-
-mostrar()
 </script>
 
 </body>
