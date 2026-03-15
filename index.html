@@ -1,52 +1,86 @@
+```html
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Seven Tech Solutions | Starlink, Redes WiFi e Tecnologia em Unaí MG</title>
-<meta name="description" content="Instalação de Starlink, redes WiFi, roteadores, nobreak e suporte em tecnologia em Unaí MG.">
 
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<title>Seven Tech Solutions | Starlink e Redes Profissionais</title>
+
+<meta name="description" content="Especialistas em instalação de Starlink, redes WiFi, infraestrutura de rede e tecnologia em Unaí MG.">
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
+
+/* RESET */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
 
 body{
 font-family:'Poppins',sans-serif;
-background:#050505;
+background:#070707;
 color:white;
-overflow-x:hidden
 }
 
 /* HEADER */
+
 header{
 position:fixed;
-width:100%;
 top:0;
+width:100%;
 display:flex;
-justify-content:space-between;
 align-items:center;
-padding:18px 40px;
-background:#1f1f1f;
-backdrop-filter:blur(10px);
-z-index:1000
+justify-content:space-between;
+padding:18px 60px;
+background:#1b1b1b;
+border-bottom:2px solid #00ff88;
+z-index:1000;
 }
 
 .logo img{
-height:45px;
+height:55px;
+}
+
+nav{
+display:flex;
+align-items:center;
 }
 
 nav a{
-margin-left:25px;
+margin:0 15px;
 text-decoration:none;
-color:white;
+color:#ddd;
 font-size:14px;
-transition:.3s
+transition:.3s;
 }
 
-nav a:hover{color:#00ff88}
+nav a:hover{
+color:#00ff88;
+}
+
+.menu-mobile{
+display:none;
+font-size:28px;
+cursor:pointer;
+}
+
+.btn-top{
+background:#00ff88;
+color:#000;
+padding:10px 22px;
+border-radius:30px;
+text-decoration:none;
+font-weight:600;
+}
 
 /* HERO */
+
 .hero{
 height:100vh;
 display:flex;
@@ -60,84 +94,99 @@ background:radial-gradient(circle at top,#003322,#000);
 
 .hero h1{
 font-family:'Orbitron';
-font-size:48px;
+font-size:50px;
 color:#00ff88;
-max-width:800px
 }
 
 .hero p{
+max-width:650px;
 margin:20px 0;
-max-width:600px;
-opacity:.9
 }
 
 .btn{
 background:#00ff88;
 color:black;
-padding:14px 26px;
+padding:14px 28px;
 border-radius:30px;
 text-decoration:none;
 font-weight:600;
-margin-top:10px;
-transition:.3s
-}
-
-.btn:hover{
-transform:scale(1.08);
-box-shadow:0 0 20px #00ff88
 }
 
 /* SECTIONS */
+
 .section{
 padding:110px 20px;
 max-width:1200px;
 margin:auto;
-text-align:center
+text-align:center;
 }
 
 .section h2{
-font-size:32px;
+font-family:'Orbitron';
+font-size:34px;
 margin-bottom:50px;
 color:#00ff88;
-font-family:'Orbitron'
 }
 
 /* SERVICES */
+
 .services{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
-gap:25px
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
 }
 
 .card{
-background:#0f0f0f;
-padding:30px 20px;
+background:#111;
+padding:30px;
 border-radius:15px;
-transition:.4s;
-box-shadow:0 0 10px rgba(0,255,136,.1)
+transition:.3s;
 }
 
 .card:hover{
-transform:translateY(-10px) scale(1.03);
-box-shadow:0 0 25px rgba(0,255,136,.5)
+transform:translateY(-10px);
+box-shadow:0 0 25px rgba(0,255,136,.4);
 }
 
-.card h3{color:#00ff88;margin-bottom:10px}
+.card h3{
+color:#00ff88;
+margin-bottom:10px;
+}
+
+/* LOJA */
+
+.store{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+}
+
+.store-card{
+background:#111;
+padding:30px;
+border-radius:15px;
+transition:.3s;
+}
+
+.store-card:hover{
+transform:scale(1.05);
+box-shadow:0 0 25px rgba(0,255,136,.4);
+}
 
 /* FORM */
+
 form{
 max-width:450px;
 margin:auto;
 display:flex;
 flex-direction:column;
-gap:12px
+gap:12px;
 }
 
 input,textarea,select{
 padding:12px;
 border:none;
 border-radius:8px;
-font-family:'Poppins'
 }
 
 button{
@@ -146,128 +195,185 @@ border:none;
 border-radius:30px;
 background:#00ff88;
 font-weight:600;
-cursor:pointer
+cursor:pointer;
 }
 
-button:hover{box-shadow:0 0 15px #00ff88}
-
 /* FOOTER */
+
 footer{
 background:#000;
-padding:40px 20px;
+padding:40px;
 text-align:center;
-margin-top:40px
+margin-top:50px;
 }
 
 /* WHATSAPP */
+
 .whatsapp{
 position:fixed;
 bottom:25px;
 right:25px;
 width:65px;
 height:65px;
-border-radius:50%;
 background:#25d366;
+border-radius:50%;
 display:flex;
 align-items:center;
 justify-content:center;
 font-size:28px;
-text-decoration:none;
 color:white;
-box-shadow:0 0 20px #000
+text-decoration:none;
 }
 
-iframe{width:100%;height:350px;border:0;border-radius:10px}
+/* RESPONSIVO */
 
-@media(max-width:700px){
-.hero h1{font-size:32px}
-nav{display:none}
+@media(max-width:768px){
+
+header{
+padding:15px 25px;
 }
+
+nav{
+display:none;
+position:absolute;
+top:70px;
+right:20px;
+background:#1b1b1b;
+flex-direction:column;
+padding:20px;
+border-radius:10px;
+}
+
+nav.active{
+display:flex;
+}
+
+.menu-mobile{
+display:block;
+}
+
+.hero h1{
+font-size:34px;
+}
+
+}
+
 </style>
+
 </head>
 
 <body>
 
 <header>
+
 <div class="logo">
-<img src="logo.png" alt="Seven Tech Solutions">
+<img src="logo.png">
 </div>
 
-<nav>
+<nav id="menu">
+
 <a href="#inicio">Início</a>
 <a href="#servicos">Serviços</a>
 <a href="#loja">Loja</a>
 <a href="#orcamento">Orçamento</a>
 <a href="#contato">Contato</a>
+
 </nav>
+
+<div class="menu-mobile" onclick="toggleMenu()">☰</div>
+
+<a class="btn-top" href="https://wa.me/5538998103514">
+WhatsApp
+</a>
+
 </header>
 
 <section class="hero" id="inicio">
-<h1>Especialistas em Starlink e Redes WiFi</h1>
-<p>Instalação profissional de internet Starlink, roteadores, Access Point e infraestrutura de redes em Unaí MG.</p>
-<a class="btn" href="https://wa.me/5538998103514">Solicitar Orçamento</a>
+
+<h1>Internet Starlink e Redes Profissionais</h1>
+
+<p>
+Instalação profissional de Starlink, roteadores, Access Point e infraestrutura de rede em Unaí MG.
+</p>
+
+<a class="btn" href="https://wa.me/5538998103514">
+Solicitar Orçamento
+</a>
+
 </section>
 
 <section class="section" id="servicos">
+
 <h2>Serviços</h2>
+
 <div class="services">
 
-<div class="card"><h3>Instalação Starlink</h3><p>Venda e instalação completa da internet via satélite.</p></div>
+<div class="card">
+<h3>Instalação Starlink</h3>
+<p>Venda e instalação completa da internet via satélite.</p>
+</div>
 
-<div class="card"><h3>Roteadores WiFi</h3><p>Configuração profissional e otimização de sinal.</p></div>
+<div class="card">
+<h3>Redes WiFi Profissionais</h3>
+<p>Instalação de roteadores e Access Point.</p>
+</div>
 
-<div class="card"><h3>Access Point</h3><p>Ampliação de cobertura WiFi.</p></div>
+<div class="card">
+<h3>Infraestrutura de Rede</h3>
+<p>Cabeamento estruturado e organização.</p>
+</div>
 
-<div class="card"><h3>Nobreak em Rede</h3><p>Proteção de equipamentos contra quedas de energia.</p></div>
-
-<div class="card"><h3>Infraestrutura de Rede</h3><p>Instalação e organização de redes estruturadas.</p></div>
-
-<div class="card"><h3>Impressora em Rede</h3><p>Compartilhamento entre computadores.</p></div>
-
-<div class="card"><h3>Assessoria em Redes</h3><p>Consultoria tecnológica profissional.</p></div>
+<div class="card">
+<h3>Nobreak em Rede</h3>
+<p>Proteção contra quedas de energia.</p>
+</div>
 
 </div>
+
 </section>
 
 <section class="section" id="loja">
-<h2>Loja de Tecnologia</h2>
 
-<div class="services">
+<h2>Loja Seven Tech</h2>
 
-<div class="card">
-<h3>Kit Starlink Original</h3>
+<div class="store">
+
+<div class="store-card">
+<h3>Comprar Starlink</h3>
 <p>Internet via satélite de alta velocidade.</p>
-<a class="btn" href="https://meli.la/1KigiMx" target="_blank">Comprar Starlink</a>
+<a class="btn" href="https://meli.la/1KigiMx" target="_blank">
+Comprar Equipamento
+</a>
 </div>
 
-<div class="card">
+<div class="store-card">
 <h3>Produtos Recomendados</h3>
-<p>Veja equipamentos de rede, roteadores e tecnologia recomendados pela Seven Tech.</p>
-<a class="btn" href="https://meli.la/2P4WsXF" target="_blank">Ver Produtos</a>
-</div>
-
-<div class="card">
-<h3>Starlink + Instalação</h3>
-<p>Compre o equipamento e solicite instalação profissional.</p>
-<a class="btn" href="https://wa.me/5538998103514?text=Olá%20quero%20comprar%20Starlink%20com%20instalação">Comprar + Instalação</a>
+<p>Equipamentos de rede e tecnologia.</p>
+<a class="btn" href="https://meli.la/2P4WsXF" target="_blank">
+Ver Produtos
+</a>
 </div>
 
 </div>
+
 </section>
 
 <section class="section" id="orcamento">
+
 <h2>Solicitar Orçamento</h2>
 
 <form onsubmit="enviarWhats();return false;">
+
 <input id="nome" placeholder="Seu nome" required>
+
 <input id="telefone" placeholder="Telefone" required>
 
 <select id="servico">
+
 <option>Instalação Starlink</option>
-<option>Roteador WiFi</option>
+<option>Rede WiFi</option>
 <option>Access Point</option>
-<option>Nobreak em rede</option>
-<option>Infraestrutura de rede</option>
+
 </select>
 
 <textarea id="msg" placeholder="Mensagem"></textarea>
@@ -275,28 +381,40 @@ nav{display:none}
 <button>Enviar Pedido</button>
 
 </form>
+
 </section>
 
 <section class="section" id="contato">
+
 <h2>Contato</h2>
 
 <p><b>WhatsApp:</b> (38) 99810-3514</p>
+
 <p><b>Instagram:</b> @seventech_solutions</p>
+
 <p><b>Cidade:</b> Unaí - MG</p>
 
-<iframe src="https://maps.google.com/maps?q=unai%20mg&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
+<iframe src="https://maps.google.com/maps?q=unai%20mg&t=&z=13&ie=UTF8&iwloc=&output=embed"
+width="100%" height="350" style="border:0;border-radius:10px"></iframe>
 
 </section>
 
 <footer>
+
 <p>Seven Tech Solutions</p>
-<p>Tecnologia e Redes em Unaí MG</p>
+
 <p>© 2026 Todos os direitos reservados</p>
+
 </footer>
 
 <a class="whatsapp" href="https://wa.me/5538998103514">💬</a>
 
 <script>
+
+function toggleMenu(){
+document.getElementById("menu").classList.toggle("active");
+}
+
 function enviarWhats(){
 
 let n=document.getElementById('nome').value
@@ -309,7 +427,9 @@ let texto=`Olá, meu nome é ${n}%0ATelefone: ${t}%0AServiço: ${s}%0A${m}`
 window.open(`https://wa.me/5538998103514?text=${texto}`)
 
 }
+
 </script>
 
 </body>
 </html>
+```
