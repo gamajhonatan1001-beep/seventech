@@ -1,15 +1,12 @@
-
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta name="description" content="Seven Tech Solutions - Segurança eletrônica, CFTV, alarmes, interfonia, redes, Starlink, infraestrutura e suporte técnico em Unaí MG.">
-
-<meta name="theme-color" content="#050505">
-
 <title>Seven Tech Solutions | Tecnologia, Segurança e Conectividade</title>
+
+<meta name="description" content="Seven Tech Solutions - Tecnologia, segurança, câmeras, alarmes, redes, Starlink, interfonia e suporte técnico em Unaí MG.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -26,17 +23,14 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-
-html {
     scroll-behavior: smooth;
 }
 
 body {
     font-family: 'Poppins', sans-serif;
     background: #050505;
-    color: #fff;
-    overflow-x: hidden;
+    color: #ffffff;
+    line-height: 1.6;
 }
 
 a {
@@ -49,13 +43,23 @@ img {
     display: block;
 }
 
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+
+/* =========================================================
+   CORES
+========================================================= */
+
 :root {
     --verde: #00ff88;
-    --verde-escuro: #00b866;
+    --verde-escuro: #00b862;
     --preto: #050505;
-    --cinza: #101010;
-    --cinza2: #181818;
-    --texto: #d7d7d7;
+    --cinza: #111111;
+    --cinza-claro: #bdbdbd;
 }
 
 
@@ -68,71 +72,67 @@ header {
     top: 0;
     left: 0;
     width: 100%;
-    height: 78px;
+    z-index: 1000;
+
+    background: rgba(0, 0, 0, 0.90);
+    backdrop-filter: blur(12px);
+
+    border-bottom: 1px solid rgba(0, 255, 136, 0.15);
+}
+
+.navbar {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+
+    height: 75px;
 
     display: flex;
     align-items: center;
     justify-content: space-between;
-
-    padding: 0 45px;
-
-    background: rgba(0, 0, 0, 0.88);
-    backdrop-filter: blur(15px);
-
-    border-bottom: 1px solid rgba(0,255,136,0.15);
-
-    z-index: 1000;
 }
 
-.logo-menu {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-}
-
-.logo-mini {
-    width: 48px;
-    height: 48px;
-    object-fit: contain;
-}
-
-.logo-text {
+.logo {
     font-family: 'Orbitron', sans-serif;
-    font-size: 18px;
+    font-size: 28px;
     font-weight: 700;
-    letter-spacing: 2px;
     color: var(--verde);
+
+    text-shadow: 0 0 15px rgba(0, 255, 136, 0.5);
 }
 
-nav {
+.logo span {
+    color: white;
+}
+
+.nav-links {
     display: flex;
-    align-items: center;
     gap: 28px;
+    list-style: none;
 }
 
-nav a {
-    color: #fff;
-    font-size: 13px;
+.nav-links a {
+    color: #ffffff;
+    font-size: 14px;
     font-weight: 500;
-    transition: .3s;
+
+    transition: 0.3s;
 }
 
-nav a:hover {
+.nav-links a:hover {
     color: var(--verde);
 }
 
-.menu-toggle {
-    display: none;
-    flex-direction: column;
-    gap: 5px;
-    cursor: pointer;
-}
 
-.menu-toggle span {
-    width: 28px;
-    height: 3px;
-    background: var(--verde);
-    border-radius: 5px;
+/* MENU MOBILE */
+
+.menu-btn {
+    display: none;
+
+    font-size: 28px;
+    color: var(--verde);
+
+    cursor: pointer;
 }
 
 
@@ -149,16 +149,14 @@ nav a:hover {
 
     text-align: center;
 
-    padding: 120px 20px 80px;
+    padding: 130px 20px 80px;
 
     position: relative;
 
     background:
-        radial-gradient(circle at 50% 30%, rgba(0,255,136,0.18), transparent 35%),
-        radial-gradient(circle at 20% 80%, rgba(0,180,255,0.08), transparent 30%),
-        #050505;
-
-    overflow: hidden;
+        radial-gradient(circle at center,
+        rgba(0, 255, 136, 0.12) 0%,
+        rgba(0, 0, 0, 0) 50%);
 }
 
 .hero::before {
@@ -167,44 +165,45 @@ nav a:hover {
     inset: 0;
 
     background:
-        linear-gradient(rgba(0,255,136,0.025) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(0,255,136,0.025) 1px, transparent 1px);
-
-    background-size: 50px 50px;
-
-    pointer-events: none;
+        linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.85));
+    
+    z-index: 0;
 }
 
 .hero-content {
-    max-width: 1000px;
     position: relative;
-    z-index: 2;
+    z-index: 1;
+
+    max-width: 900px;
 }
+
+
+/* =========================================================
+   LOGO GRANDE
+========================================================= */
 
 .hero-logo {
-    width: 280px;
-    height: 280px;
+    width: 420px;
+    max-width: 85vw;
 
-    object-fit: contain;
-
-    margin: 0 auto 25px;
+    margin: 0 auto 35px;
 
     filter:
-        drop-shadow(0 0 25px rgba(0,255,136,.35))
-        drop-shadow(0 0 60px rgba(0,255,136,.15));
+        drop-shadow(0 0 15px rgba(0, 255, 136, 0.35));
 
-    animation: logoPulse 4s infinite ease-in-out;
+    transition: 0.4s ease;
 }
 
-@keyframes logoPulse {
-    0%, 100% {
-        transform: scale(1);
-    }
-
-    50% {
-        transform: scale(1.04);
-    }
+.hero-logo:hover {
+    transform: scale(1.03);
+    filter:
+        drop-shadow(0 0 30px rgba(0, 255, 136, 0.6));
 }
+
+
+/* =========================================================
+   HERO TEXTO
+========================================================= */
 
 .hero h1 {
     font-family: 'Orbitron', sans-serif;
@@ -214,72 +213,60 @@ nav a:hover {
     line-height: 1.1;
 
     margin-bottom: 20px;
+
+    text-transform: uppercase;
 }
 
 .hero h1 span {
     color: var(--verde);
+
+    text-shadow:
+        0 0 15px rgba(0, 255, 136, 0.35);
 }
 
 .hero p {
+    color: #cfcfcf;
+
     max-width: 760px;
 
     margin: auto;
 
-    color: var(--texto);
-
     font-size: 17px;
-
-    line-height: 1.8;
 }
 
-.hero-buttons {
-    margin-top: 35px;
 
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-
-    flex-wrap: wrap;
-}
+/* =========================================================
+   BOTÃO
+========================================================= */
 
 .btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
+    display: inline-block;
 
-    padding: 14px 27px;
+    margin-top: 30px;
 
-    border-radius: 50px;
+    padding: 14px 28px;
+
+    border-radius: 8px;
 
     background: var(--verde);
 
-    color: #000;
+    color: #000000;
 
     font-weight: 700;
 
-    font-size: 14px;
+    transition: 0.3s;
 
-    transition: .3s;
-
-    border: 1px solid var(--verde);
+    box-shadow:
+        0 0 20px rgba(0, 255, 136, 0.25);
 }
 
 .btn:hover {
-    transform: translateY(-4px);
+    transform: scale(1.05);
+
+    background: #ffffff;
 
     box-shadow:
-        0 0 15px rgba(0,255,136,.6),
-        0 0 35px rgba(0,255,136,.25);
-}
-
-.btn-outline {
-    background: transparent;
-    color: #fff;
-}
-
-.btn-outline:hover {
-    color: #000;
-    background: var(--verde);
+        0 0 30px rgba(0, 255, 136, 0.45);
 }
 
 
@@ -287,14 +274,8 @@ nav a:hover {
    SEÇÕES
 ========================================================= */
 
-.section {
-    max-width: 1250px;
-
-    margin: auto;
-
-    padding: 110px 25px;
-
-    scroll-margin-top: 80px;
+section {
+    padding: 100px 0;
 }
 
 .section-title {
@@ -303,125 +284,24 @@ nav a:hover {
     margin-bottom: 55px;
 }
 
-.section-title small {
-    display: block;
-
-    color: var(--verde);
-
-    font-size: 12px;
-
-    font-weight: 700;
-
-    letter-spacing: 3px;
-
-    text-transform: uppercase;
-
-    margin-bottom: 10px;
-}
-
 .section-title h2 {
-    font-family: 'Orbitron', sans-serif;
-
-    font-size: clamp(26px, 4vw, 40px);
-
-    margin-bottom: 15px;
-}
-
-.section-title p {
-    max-width: 700px;
-
-    margin: auto;
-
-    color: #999;
-
-    font-size: 14px;
-
-    line-height: 1.8;
-}
-
-
-/* =========================================================
-   SOBRE
-========================================================= */
-
-.about {
-    display: grid;
-
-    grid-template-columns: 1fr 1fr;
-
-    gap: 60px;
-
-    align-items: center;
-}
-
-.about-content h2 {
     font-family: 'Orbitron', sans-serif;
 
     font-size: 35px;
 
-    margin-bottom: 20px;
+    margin-bottom: 12px;
 }
 
-.about-content h2 span {
+.section-title h2 span {
     color: var(--verde);
 }
 
-.about-content p {
-    color: #bdbdbd;
+.section-title p {
+    color: #999;
 
-    line-height: 1.9;
+    max-width: 650px;
 
-    font-size: 15px;
-
-    margin-bottom: 15px;
-}
-
-.about-box {
-    display: grid;
-
-    grid-template-columns: 1fr 1fr;
-
-    gap: 15px;
-}
-
-.info-box {
-    background: linear-gradient(145deg, #111, #080808);
-
-    border: 1px solid rgba(0,255,136,.15);
-
-    border-radius: 15px;
-
-    padding: 25px;
-
-    text-align: center;
-
-    transition: .3s;
-}
-
-.info-box:hover {
-    transform: translateY(-6px);
-
-    border-color: rgba(0,255,136,.6);
-
-    box-shadow: 0 10px 40px rgba(0,255,136,.08);
-}
-
-.info-box strong {
-    display: block;
-
-    color: var(--verde);
-
-    font-family: 'Orbitron', sans-serif;
-
-    font-size: 26px;
-
-    margin-bottom: 8px;
-}
-
-.info-box span {
-    color: #aaa;
-
-    font-size: 12px;
+    margin: auto;
 }
 
 
@@ -429,99 +309,251 @@ nav a:hover {
    SERVIÇOS
 ========================================================= */
 
-.services {
+#servicos {
+    background:
+        linear-gradient(
+            180deg,
+            #050505 0%,
+            #090909 50%,
+            #050505 100%
+        );
+}
+
+
+/*
+===========================================================
+   GRID DOS SERVIÇOS
+===========================================================
+*/
+
+.servicos-grid {
     display: grid;
 
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns:
+        repeat(3, 1fr);
 
-    gap: 20px;
+    gap: 25px;
 }
 
-.service-card {
+
+/*
+===========================================================
+   CARD DO SERVIÇO
+===========================================================
+*/
+
+.servico {
     position: relative;
 
-    background:
-        linear-gradient(145deg, #111, #080808);
-
-    border: 1px solid rgba(0,255,136,.12);
-
-    border-radius: 18px;
-
-    padding: 30px 25px;
-
-    min-height: 220px;
-
-    transition: .35s;
+    min-height: 280px;
 
     overflow: hidden;
+
+    border-radius: 15px;
+
+    border: 1px solid rgba(0, 255, 136, 0.20);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,0.05),
+            rgba(255,255,255,0.015)
+        );
+
+    cursor: pointer;
+
+    transition:
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
 }
 
-.service-card::after {
-    content: "";
 
-    position: absolute;
+/*
+===========================================================
+   CONTEÚDO NORMAL DO SERVIÇO
+===========================================================
+*/
 
-    width: 100px;
-    height: 100px;
+.servico-conteudo {
+    position: relative;
 
-    right: -50px;
-    bottom: -50px;
+    z-index: 2;
 
-    background: rgba(0,255,136,.08);
+    height: 100%;
 
-    border-radius: 50%;
+    min-height: 280px;
 
-    transition: .4s;
-}
-
-.service-card:hover {
-    transform: translateY(-8px);
-
-    border-color: rgba(0,255,136,.55);
-
-    box-shadow:
-        0 15px 50px rgba(0,255,136,.08);
-}
-
-.service-card:hover::after {
-    transform: scale(3);
-}
-
-.service-icon {
-    width: 55px;
-    height: 55px;
+    padding: 35px 28px;
 
     display: flex;
-    align-items: center;
+
+    flex-direction: column;
+
     justify-content: center;
 
-    border-radius: 14px;
+    align-items: center;
 
-    background: rgba(0,255,136,.08);
+    text-align: center;
 
-    border: 1px solid rgba(0,255,136,.2);
+    transition:
+        opacity 0.35s ease,
+        transform 0.35s ease;
+}
+
+.servico-conteudo .icone {
+    font-size: 48px;
+
+    margin-bottom: 18px;
+
+    filter:
+        drop-shadow(0 0 10px rgba(0, 255, 136, 0.3));
+}
+
+.servico h3 {
+    font-family: 'Orbitron', sans-serif;
 
     color: var(--verde);
 
-    font-size: 25px;
-
-    margin-bottom: 20px;
-}
-
-.service-card h3 {
-    font-family: 'Orbitron', sans-serif;
-
-    font-size: 16px;
+    font-size: 20px;
 
     margin-bottom: 10px;
 }
 
-.service-card p {
-    color: #999;
+.servico p {
+    color: #bcbcbc;
+
+    font-size: 14px;
+
+    max-width: 280px;
+}
+
+
+/*
+===========================================================
+   IMAGEM DO SERVIÇO
+
+   FICA ESCONDIDA NORMALMENTE
+===========================================================
+*/
+
+.servico-imagem {
+    position: absolute;
+
+    inset: 0;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transform: scale(1.08);
+
+    transition:
+        opacity 0.4s ease,
+        transform 0.5s ease,
+        visibility 0.4s ease;
+
+    z-index: 3;
+}
+
+.servico-imagem img {
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+}
+
+
+/*
+===========================================================
+   ESCURECIMENTO DA FOTO
+===========================================================
+*/
+
+.servico-imagem::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            to top,
+            rgba(0, 0, 0, 0.88),
+            rgba(0, 0, 0, 0.20)
+        );
+}
+
+
+/*
+===========================================================
+   TEXTO QUE FICA SOBRE A FOTO
+===========================================================
+*/
+
+.servico-hover-texto {
+    position: absolute;
+
+    left: 25px;
+
+    right: 25px;
+
+    bottom: 25px;
+
+    z-index: 5;
+
+    opacity: 0;
+
+    transform: translateY(15px);
+
+    transition:
+        opacity 0.4s ease,
+        transform 0.4s ease;
+}
+
+.servico-hover-texto h3 {
+    font-family: 'Orbitron', sans-serif;
+
+    color: var(--verde);
+
+    margin-bottom: 6px;
+}
+
+.servico-hover-texto p {
+    color: #ffffff;
 
     font-size: 13px;
+}
 
-    line-height: 1.7;
+
+/*
+===========================================================
+   HOVER
+
+   AQUI A FOTO APARECE SOMENTE COM O MOUSE
+===========================================================
+*/
+
+.servico:hover .servico-imagem {
+    opacity: 1;
+
+    visibility: visible;
+
+    transform: scale(1);
+}
+
+.servico:hover .servico-hover-texto {
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+.servico:hover {
+    border-color: var(--verde);
+
+    box-shadow:
+        0 0 30px rgba(0, 255, 136, 0.20);
 }
 
 
@@ -529,125 +561,58 @@ nav a:hover {
    GALERIA
 ========================================================= */
 
-.gallery {
-    display: grid;
-
-    grid-template-columns: repeat(3, 1fr);
-
-    gap: 18px;
+#galeria {
+    background: #070707;
 }
 
-.gallery-item {
-    position: relative;
+.galeria-grid {
+    display: grid;
 
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+.galeria-item {
     height: 280px;
 
     overflow: hidden;
 
-    border-radius: 18px;
+    border-radius: 14px;
 
-    border: 1px solid rgba(0,255,136,.15);
+    border: 1px solid rgba(0, 255, 136, 0.15);
 
-    background: #101010;
+    position: relative;
 }
 
-.gallery-item.large {
-    grid-column: span 2;
-}
-
-.gallery-item img {
+.galeria-item img {
     width: 100%;
+
     height: 100%;
 
     object-fit: cover;
 
-    transition: .5s;
+    transition: 0.5s;
 }
 
-.gallery-item:hover img {
+.galeria-item:hover img {
     transform: scale(1.08);
 }
 
-.gallery-overlay {
+.galeria-item::after {
+    content: "";
+
     position: absolute;
 
-    left: 0;
-    right: 0;
-    bottom: 0;
+    inset: 0;
 
-    padding: 25px 20px 20px;
-
-    background: linear-gradient(
-        transparent,
-        rgba(0,0,0,.95)
-    );
-
-    transform: translateY(5px);
-
-    transition: .3s;
-}
-
-.gallery-item:hover .gallery-overlay {
-    transform: translateY(0);
-}
-
-.gallery-overlay h3 {
-    color: var(--verde);
-
-    font-size: 16px;
-
-    margin-bottom: 4px;
-}
-
-.gallery-overlay p {
-    color: #ddd;
-
-    font-size: 12px;
-}
-
-
-/* =========================================================
-   DIFERENCIAIS
-========================================================= */
-
-.differentials {
-    display: grid;
-
-    grid-template-columns: repeat(4, 1fr);
-
-    gap: 15px;
-}
-
-.differential {
-    text-align: center;
-
-    padding: 35px 20px;
-
-    background: #0d0d0d;
-
-    border-radius: 15px;
-
-    border: 1px solid #171717;
-}
-
-.differential-icon {
-    font-size: 30px;
-
-    margin-bottom: 15px;
-}
-
-.differential h3 {
-    font-size: 15px;
-
-    margin-bottom: 8px;
-}
-
-.differential p {
-    color: #888;
-
-    font-size: 12px;
-
-    line-height: 1.6;
+    background:
+        linear-gradient(
+            to top,
+            rgba(0,0,0,0.6),
+            transparent
+        );
 }
 
 
@@ -655,93 +620,77 @@ nav a:hover {
    ORÇAMENTO
 ========================================================= */
 
-.quote-section {
+#orcamento {
     background:
-        radial-gradient(circle at center, rgba(0,255,136,.09), transparent 45%);
-
-    border-top: 1px solid rgba(0,255,136,.08);
-
-    border-bottom: 1px solid rgba(0,255,136,.08);
+        radial-gradient(
+            circle at center,
+            rgba(0, 255, 136, 0.06),
+            transparent 60%
+        );
 }
 
-.form-container {
-    max-width: 650px;
+.formulario {
+    max-width: 750px;
 
     margin: auto;
 
-    background: #0d0d0d;
-
-    border: 1px solid rgba(0,255,136,.15);
-
     padding: 35px;
 
-    border-radius: 20px;
+    background: rgba(255,255,255,0.03);
 
-    box-shadow: 0 20px 70px rgba(0,0,0,.4);
+    border:
+        1px solid rgba(0,255,136,0.20);
+
+    border-radius: 15px;
 }
 
 .form-group {
-    margin-bottom: 18px;
+    margin-bottom: 20px;
 }
 
 .form-group label {
     display: block;
 
-    color: var(--verde);
-
-    font-size: 12px;
-
-    font-weight: 600;
-
     margin-bottom: 7px;
+
+    color: #ddd;
+
+    font-size: 14px;
 }
 
-input,
-textarea,
-select {
+.form-group input,
+.form-group select,
+.form-group textarea {
     width: 100%;
 
     padding: 14px;
 
-    border-radius: 9px;
+    border-radius: 7px;
 
-    border: 1px solid #292929;
+    border: 1px solid rgba(255,255,255,0.12);
+
+    background: #0c0c0c;
+
+    color: white;
 
     outline: none;
 
-    background: #050505;
-
-    color: #fff;
-
     font-family: 'Poppins', sans-serif;
-
-    transition: .3s;
 }
 
-input:focus,
-textarea:focus,
-select:focus {
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
     border-color: var(--verde);
 
-    box-shadow: 0 0 15px rgba(0,255,136,.08);
+    box-shadow:
+        0 0 10px rgba(0,255,136,0.10);
 }
 
-textarea {
-    min-height: 120px;
+.form-group textarea {
+    min-height: 130px;
 
     resize: vertical;
-}
-
-select option {
-    background: #111;
-}
-
-.form-button {
-    width: 100%;
-
-    margin-top: 5px;
-
-    cursor: pointer;
 }
 
 
@@ -749,71 +698,65 @@ select option {
    CONTATO
 ========================================================= */
 
-.contact {
+#contato {
+    background: #080808;
+}
+
+.contato-grid {
     display: grid;
 
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns:
+        repeat(2, 1fr);
 
-    gap: 30px;
+    gap: 40px;
 
     align-items: stretch;
 }
 
-.contact-card {
-    background: #0d0d0d;
-
-    border: 1px solid rgba(0,255,136,.12);
-
-    border-radius: 18px;
-
+.contato-box {
     padding: 35px;
+
+    background:
+        rgba(255,255,255,0.03);
+
+    border:
+        1px solid rgba(0,255,136,0.15);
+
+    border-radius: 15px;
 }
 
-.contact-card h3 {
+.contato-box h3 {
     font-family: 'Orbitron', sans-serif;
 
     color: var(--verde);
 
-    margin-bottom: 25px;
+    margin-bottom: 20px;
 }
 
-.contact-item {
-    margin-bottom: 18px;
+.contato-item {
+    margin-bottom: 15px;
+
+    color: #ccc;
 }
 
-.contact-item span {
-    display: block;
-
-    color: #777;
-
-    font-size: 11px;
-
-    text-transform: uppercase;
-
-    letter-spacing: 1px;
-
-    margin-bottom: 5px;
+.contato-item strong {
+    color: white;
 }
 
-.contact-item a,
-.contact-item p {
-    color: #ddd;
-
-    font-size: 14px;
-}
-
-.contact-item a:hover {
+.contato-item a:hover {
     color: var(--verde);
 }
 
-.map {
+.maps {
     width: 100%;
+
+    height: 100%;
 
     min-height: 350px;
 
     border: 0;
 
-    border-radius: 18px;
+    border-radius: 15px;
 }
 
 
@@ -822,240 +765,205 @@ select option {
 ========================================================= */
 
 footer {
-    background: #020202;
-
-    border-top: 1px solid rgba(0,255,136,.15);
+    padding: 30px 20px;
 
     text-align: center;
 
-    padding: 45px 20px;
-}
+    background: #020202;
 
-.footer-logo {
-    font-family: 'Orbitron', sans-serif;
+    border-top:
+        1px solid rgba(0,255,136,0.12);
 
-    color: var(--verde);
-
-    font-size: 20px;
-
-    letter-spacing: 2px;
-
-    margin-bottom: 10px;
-}
-
-footer p {
     color: #777;
 
-    font-size: 12px;
-
-    margin: 7px 0;
+    font-size: 13px;
 }
 
-.footer-links {
-    margin: 20px 0;
-}
-
-.footer-links a {
-    color: #aaa;
-
-    margin: 0 10px;
-
-    font-size: 12px;
-}
-
-.footer-links a:hover {
+footer span {
     color: var(--verde);
 }
 
 
 /* =========================================================
-   WHATSAPP
+   WHATSAPP FLUTUANTE
 ========================================================= */
 
-.whatsapp {
+.whatsapp-float {
     position: fixed;
 
-    right: 25px;
-    bottom: 25px;
+    right: 22px;
 
-    width: 62px;
-    height: 62px;
+    bottom: 22px;
+
+    width: 58px;
+
+    height: 58px;
+
+    border-radius: 50%;
+
+    background: #25D366;
+
+    color: white;
 
     display: flex;
 
     align-items: center;
+
     justify-content: center;
 
-    background: #25d366;
-
-    color: #fff;
-
-    border-radius: 50%;
-
-    font-size: 27px;
-
-    box-shadow: 0 5px 30px rgba(0,0,0,.5);
+    font-size: 28px;
 
     z-index: 999;
 
-    transition: .3s;
+    box-shadow:
+        0 5px 25px rgba(37,211,102,0.35);
+
+    transition: 0.3s;
 }
 
-.whatsapp:hover {
+.whatsapp-float:hover {
     transform: scale(1.1);
 }
 
 
 /* =========================================================
-   RESPONSIVO
+   RESPONSIVIDADE
 ========================================================= */
 
-@media (max-width: 950px) {
+@media (max-width: 900px) {
 
-    .services {
-        grid-template-columns: repeat(2, 1fr);
+    .servicos-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
     }
 
-    .differentials {
-        grid-template-columns: repeat(2, 1fr);
+    .galeria-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
     }
 
-    .about {
+    .contato-grid {
         grid-template-columns: 1fr;
     }
 
-    .contact {
-        grid-template-columns: 1fr;
-    }
 }
 
 
-@media (max-width: 768px) {
+@media (max-width: 700px) {
 
-    header {
-        height: 68px;
-
-        padding: 0 20px;
+    .navbar {
+        height: 65px;
     }
 
-    .logo-mini {
-        width: 38px;
-        height: 38px;
+    .menu-btn {
+        display: block;
     }
 
-    .logo-text {
-        font-size: 14px;
-    }
-
-    nav {
-        display: none;
-
+    .nav-links {
         position: absolute;
 
-        top: 68px;
+        top: 65px;
 
         left: 0;
 
         width: 100%;
 
-        background: rgba(0,0,0,.98);
+        background: #050505;
+
+        border-bottom:
+            1px solid rgba(0,255,136,0.15);
+
+        display: none;
 
         flex-direction: column;
 
-        align-items: flex-start;
+        gap: 0;
 
-        padding: 25px;
-
-        gap: 20px;
-
-        border-bottom: 1px solid rgba(0,255,136,.2);
+        padding: 10px 0;
     }
 
-    nav.active {
+    .nav-links.active {
         display: flex;
     }
 
-    .menu-toggle {
-        display: flex;
+    .nav-links li {
+        text-align: center;
+    }
+
+    .nav-links a {
+        display: block;
+
+        padding: 14px;
     }
 
     .hero {
-        padding-top: 100px;
+        padding-top: 110px;
     }
 
     .hero-logo {
-        width: 210px;
-        height: 210px;
-    }
-
-    .hero p {
-        font-size: 14px;
-    }
-
-    .section {
-        padding: 80px 20px;
-    }
-
-    .services {
-        grid-template-columns: 1fr;
-    }
-
-    .gallery {
-        grid-template-columns: 1fr;
-    }
-
-    .gallery-item.large {
-        grid-column: span 1;
-    }
-
-    .gallery-item {
-        height: 260px;
-    }
-
-    .differentials {
-        grid-template-columns: 1fr 1fr;
-    }
-
-    .form-container {
-        padding: 25px 20px;
-    }
-}
-
-
-@media (max-width: 480px) {
-
-    .hero-logo {
-        width: 170px;
-        height: 170px;
+        width: 300px;
     }
 
     .hero h1 {
-        font-size: 30px;
+        font-size: 34px;
     }
 
-    .hero-buttons {
-        flex-direction: column;
+    .hero p {
+        font-size: 15px;
     }
 
-    .btn {
-        width: 100%;
-    }
-
-    .differentials {
+    .servicos-grid {
         grid-template-columns: 1fr;
     }
 
-    .gallery-item {
-        height: 220px;
+    .galeria-grid {
+        grid-template-columns: 1fr;
     }
 
-    .whatsapp {
-        width: 56px;
-        height: 56px;
-
-        right: 18px;
-        bottom: 18px;
+    .galeria-item {
+        height: 240px;
     }
+
+    section {
+        padding: 75px 0;
+    }
+
+    .section-title h2 {
+        font-size: 28px;
+    }
+
+    .formulario {
+        padding: 22px;
+    }
+
+}
+
+
+/*
+===========================================================
+   CELULAR
+
+   No celular não existe hover como no computador.
+   Então deixamos a imagem aparecer normalmente ao tocar.
+===========================================================
+*/
+
+@media (max-width: 700px) {
+
+    .servico:active .servico-imagem {
+        opacity: 1;
+
+        visibility: visible;
+
+        transform: scale(1);
+    }
+
+    .servico:active .servico-hover-texto {
+        opacity: 1;
+
+        transform: translateY(0);
+    }
+
 }
 
 </style>
@@ -1065,1072 +973,1113 @@ footer p {
 <body>
 
 
-<!-- =====================================================
+<!-- ======================================================
      HEADER
-===================================================== -->
+====================================================== -->
 
 <header>
 
-    <div class="logo-menu">
+<nav class="navbar">
 
-        <!-- COLOQUE SUA LOGO AQUI -->
-        <img src="logo.png" class="logo-mini" alt="Seven Tech Solutions">
+<a href="#inicio" class="logo">
+    Seven<span>Tech</span>
+</a>
 
-        <div class="logo-text">
-            SEVEN TECH
-        </div>
+<div class="menu-btn" onclick="toggleMenu()">
+    ☰
+</div>
 
-    </div>
+<ul class="nav-links" id="menu">
 
-
-    <nav id="nav">
-
+    <li>
         <a href="#inicio">Início</a>
+    </li>
 
-        <a href="#sobre">Empresa</a>
-
+    <li>
         <a href="#servicos">Serviços</a>
+    </li>
 
-        <a href="#trabalhos">Trabalhos</a>
+    <li>
+        <a href="#galeria">Projetos</a>
+    </li>
 
+    <li>
         <a href="#orcamento">Orçamento</a>
+    </li>
 
+    <li>
         <a href="#contato">Contato</a>
+    </li>
 
-    </nav>
+</ul>
 
-
-    <div class="menu-toggle" id="menuToggle">
-
-        <span></span>
-        <span></span>
-        <span></span>
-
-    </div>
+</nav>
 
 </header>
 
 
 
-<!-- =====================================================
+<!-- ======================================================
      HERO
-===================================================== -->
+====================================================== -->
 
 <section class="hero" id="inicio">
 
-    <div class="hero-content">
+<div class="hero-content">
 
-        <!--
-        COLOQUE SUA LOGO COM O NOME:
+    <!--
+        COLOQUE SUA LOGO AQUI
+
+        Nome do arquivo:
         logo.png
-        -->
+    -->
+
+    <img
+        src="logo.png"
+        alt="Seven Tech Solutions"
+        class="hero-logo"
+    >
+
+    <h1>
+        Tecnologia,
+        <span>Segurança</span>
+        e Conectividade
+    </h1>
+
+    <p>
+        Soluções profissionais em tecnologia, segurança eletrônica,
+        redes, conectividade e suporte técnico para residências,
+        empresas e condomínios.
+    </p>
+
+    <a
+        href="https://wa.me/5538998103514?text=Olá%20Seven%20Tech,%20gostaria%20de%20solicitar%20um%20orçamento."
+        target="_blank"
+        class="btn"
+    >
+        Solicitar Orçamento
+    </a>
+
+</div>
+
+</section>
+
+
+
+<!-- ======================================================
+     SERVIÇOS
+====================================================== -->
+
+<section id="servicos">
+
+<div class="container">
+
+<div class="section-title">
+
+    <h2>
+        Nossos <span>Serviços</span>
+    </h2>
+
+    <p>
+        Trabalhamos com soluções completas para segurança,
+        conectividade, infraestrutura e tecnologia.
+    </p>
+
+</div>
+
+
+
+<div class="servicos-grid">
+
+
+<!-- ====================================================
+     SERVIÇO 1
+==================================================== -->
+
+<div class="servico">
+
+    <div class="servico-conteudo">
+
+        <div class="icone">📹</div>
+
+        <h3>
+            Sistema de Câmeras
+        </h3>
+
+        <p>
+            Instalação e configuração de sistemas
+            de monitoramento e segurança.
+        </p>
+
+    </div>
+
+
+    <div class="servico-imagem">
 
         <img
-            src="logo.png"
-            alt="Seven Tech Solutions"
-            class="hero-logo"
+            src="servico-camera.jpg"
+            alt="Sistema de Câmeras"
         >
 
+    </div>
 
-        <h1>
-            Tecnologia, Segurança
-            <br>
-            <span>e Conectividade</span>
-        </h1>
 
+    <div class="servico-hover-texto">
+
+        <h3>
+            Sistema de Câmeras
+        </h3>
 
         <p>
-            Soluções completas para residências, empresas,
-            condomínios e comércios. Segurança eletrônica,
-            redes, conectividade, automação e suporte técnico.
+            Proteção e monitoramento para sua residência
+            ou empresa.
         </p>
 
-
-        <div class="hero-buttons">
-
-            <a
-                href="#servicos"
-                class="btn"
-            >
-                Conheça nossos serviços
-            </a>
-
-
-            <a
-                href="https://wa.me/5538998103514"
-                target="_blank"
-                class="btn btn-outline"
-            >
-                Falar pelo WhatsApp
-            </a>
-
-        </div>
-
     </div>
 
-</section>
+</div>
 
 
 
-<!-- =====================================================
-     SOBRE
-===================================================== -->
+<!-- ====================================================
+     SERVIÇO 2
+==================================================== -->
 
-<section class="section" id="sobre">
+<div class="servico">
 
-    <div class="about">
+    <div class="servico-conteudo">
 
-        <div class="about-content">
+        <div class="icone">🚨</div>
 
-            <div class="section-title" style="text-align:left;margin-bottom:25px">
-
-                <small>QUEM SOMOS</small>
-
-                <h2>
-                    Tecnologia que
-                    <span>protege e conecta.</span>
-                </h2>
-
-            </div>
-
-
-            <p>
-                A Seven Tech Solutions atua com soluções
-                tecnológicas para residências, empresas,
-                comércios e condomínios.
-            </p>
-
-
-            <p>
-                Trabalhamos com segurança eletrônica,
-                sistemas de câmeras, alarmes, interfonia,
-                infraestrutura de redes, Starlink,
-                suporte técnico e configuração de sistemas.
-            </p>
-
-
-            <p>
-                Nosso objetivo é entregar uma solução
-                completa, organizada e confiável para
-                cada necessidade do cliente.
-            </p>
-
-        </div>
-
-
-        <div class="about-box">
-
-            <div class="info-box">
-
-                <strong>10+</strong>
-
-                <span>
-                    Soluções em tecnologia
-                </span>
-
-            </div>
-
-
-            <div class="info-box">
-
-                <strong>100%</strong>
-
-                <span>
-                    Atendimento personalizado
-                </span>
-
-            </div>
-
-
-            <div class="info-box">
-
-                <strong>24h</strong>
-
-                <span>
-                    Suporte e assistência
-                </span>
-
-            </div>
-
-
-            <div class="info-box">
-
-                <strong>MG</strong>
-
-                <span>
-                    Atendimento em Unaí e região
-                </span>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- =====================================================
-     SERVIÇOS
-===================================================== -->
-
-<section class="section" id="servicos">
-
-    <div class="section-title">
-
-        <small>O QUE FAZEMOS</small>
-
-        <h2>
-            Nossos Serviços
-        </h2>
+        <h3>
+            Alarmes Residenciais
+        </h3>
 
         <p>
-            Soluções completas em tecnologia, segurança,
-            conectividade e infraestrutura.
+            Sistemas de alarme para aumentar a segurança
+            da sua residência.
         </p>
 
     </div>
 
 
-    <div class="services">
-
-
-        <!-- SERVIÇO 1 -->
-
-        <div class="service-card">
-
-            <div class="service-icon">
-                📹
-            </div>
-
-            <h3>
-                Sistema de Câmeras IP
-            </h3>
-
-            <p>
-                Instalação e configuração de sistemas
-                de monitoramento por câmeras IP,
-                com acesso remoto.
-            </p>
-
-        </div>
-
-
-        <!-- SERVIÇO 2 -->
-
-        <div class="service-card">
-
-            <div class="service-icon">
-                🚨
-            </div>
-
-            <h3>
-                Alarme Residencial
-            </h3>
-
-            <p>
-                Instalação e configuração de sistemas
-                de alarme para proteção residencial
-                e comercial.
-            </p>
-
-        </div>
-
-
-        <!-- SERVIÇO 3 -->
-
-        <div class="service-card">
-
-            <div class="service-icon">
-                🏢
-            </div>
-
-            <h3>
-                Interfonia Predial
-            </h3>
-
-            <p>
-                Sistemas de interfonia para prédios,
-                condomínios e ambientes comerciais.
-            </p>
-
-        </div>
-
-
-        <!-- SERVIÇO 4 -->
-
-        <div class="service-card">
-
-            <div class="service-icon">
-                🏠
-            </div>
-
-            <h3>
-                Interfonia Residencial
-            </h3>
-
-            <p>
-                Instalação e configuração de interfones
-                para residências e portões eletrônicos.
-            </p>
-
-        </div>
-
-
-        <!-- SERVIÇO 5 -->
-
-        <div class="service-card">
-
-            <div class="service-icon">
-                🛰️
-            </div>
-
-            <h3>
-                Starlink
-            </h3>
-
-            <p>
-                Instalação, configuração e otimização
-                da internet via satélite Starlink.
-            </p>
-
-        </div>
-
-
-        <!-- SERVIÇO 6 -->
-
-        <div class="service-card">
-
-            <div class="service-icon">
-                🌐
-            </div>
-
-            <h3>
-                Infraestrutura de Redes
-            </h3>
-
-            <p>
-                Projetos e instalações completas de
-                redes para empresas, residências
-                e ambientes comerciais.
-            </p>
-
-        </div>
-
-
-        <!-- SERVIÇO 7 -->
-
-        <div class="service-card">
-
-            <div class="service-icon">
-                🛠️
-            </div>
-
-            <h3>
-                Suporte Técnico
-            </h3>
-
-            <p>
-                Suporte, manutenção, diagnóstico e
-                configuração de equipamentos e sistemas.
-            </p>
-
-        </div>
-
-
-        <!-- SERVIÇO 8 -->
-
-        <div class="service-card">
-
-            <div class="service-icon">
-                💻
-            </div>
-
-            <h3>
-                Programação de Sistemas
-            </h3>
-
-            <p>
-                Configuração e programação de sistemas
-                de segurança, automação e equipamentos.
-            </p>
-
-        </div>
-
-
-        <!-- SERVIÇO 9 -->
-
-        <div class="service-card">
-
-            <div class="service-icon">
-                🔐
-            </div>
-
-            <h3>
-                Programação de Alarmes
-            </h3>
-
-            <p>
-                Configuração, ajustes e programação
-                de sistemas de alarmes residenciais
-                e comerciais.
-            </p>
-
-        </div>
-
-
-        <!-- SERVIÇO 10 -->
-
-        <div class="service-card">
-
-            <div class="service-icon">
-                📡
-            </div>
-
-            <h3>
-                CFTV
-            </h3>
-
-            <p>
-                Instalação, configuração e manutenção
-                de sistemas de CFTV para monitoramento.
-            </p>
-
-        </div>
-
-
-        <!-- SERVIÇO 11 -->
-
-        <div class="service-card">
-
-            <div class="service-icon">
-                📶
-            </div>
-
-            <h3>
-                Wi-Fi Profissional
-            </h3>
-
-            <p>
-                Distribuição de sinal, Access Points,
-                roteadores e otimização de cobertura.
-            </p>
-
-        </div>
-
-
-        <!-- SERVIÇO 12 -->
-
-        <div class="service-card">
-
-            <div class="service-icon">
-                ⚙️
-            </div>
-
-            <h3>
-                Manutenção e Configuração
-            </h3>
-
-            <p>
-                Manutenção preventiva e configuração
-                de equipamentos tecnológicos.
-            </p>
-
-        </div>
-
+    <div class="servico-imagem">
+
+        <img
+            src="servico-alarme.jpg"
+            alt="Alarme Residencial"
+        >
 
     </div>
 
-</section>
 
+    <div class="servico-hover-texto">
 
-
-<!-- =====================================================
-     TRABALHOS REALIZADOS
-===================================================== -->
-
-<section class="section" id="trabalhos">
-
-    <div class="section-title">
-
-        <small>PORTFÓLIO</small>
-
-        <h2>
-            Alguns de nossos trabalhos
-        </h2>
+        <h3>
+            Alarmes Residenciais
+        </h3>
 
         <p>
-            Veja alguns exemplos de serviços realizados
-            pela Seven Tech Solutions.
+            Instalação, configuração e programação
+            de sistemas de alarme.
+        </p>
+
+    </div>
+
+</div>
+
+
+
+<!-- ====================================================
+     SERVIÇO 3
+==================================================== -->
+
+<div class="servico">
+
+    <div class="servico-conteudo">
+
+        <div class="icone">🏠</div>
+
+        <h3>
+            Interfonia
+        </h3>
+
+        <p>
+            Soluções de interfone para residências,
+            prédios e condomínios.
         </p>
 
     </div>
 
 
-    <div class="gallery">
+    <div class="servico-imagem">
 
-
-        <!--
-        BASTA COLOCAR NO GITHUB:
-
-        foto1.jpg
-        foto2.jpg
-        foto3.jpg
-        foto4.jpg
-        foto5.jpg
-
-        -->
-
-
-        <div class="gallery-item large">
-
-            <img
-                src="foto1.jpg"
-                alt="Instalação realizada pela Seven Tech"
-                onerror="this.style.display='none'"
-            >
-
-            <div class="gallery-overlay">
-
-                <h3>
-                    Instalação de Câmeras
-                </h3>
-
-                <p>
-                    Sistema de monitoramento instalado.
-                </p>
-
-            </div>
-
-        </div>
-
-
-
-        <div class="gallery-item">
-
-            <img
-                src="foto2.jpg"
-                alt="Sistema de alarme"
-                onerror="this.style.display='none'"
-            >
-
-            <div class="gallery-overlay">
-
-                <h3>
-                    Sistema de Alarme
-                </h3>
-
-                <p>
-                    Instalação e configuração.
-                </p>
-
-            </div>
-
-        </div>
-
-
-
-        <div class="gallery-item">
-
-            <img
-                src="foto3.jpg"
-                alt="Infraestrutura de rede"
-                onerror="this.style.display='none'"
-            >
-
-            <div class="gallery-overlay">
-
-                <h3>
-                    Infraestrutura de Rede
-                </h3>
-
-                <p>
-                    Organização e instalação de rede.
-                </p>
-
-            </div>
-
-        </div>
-
-
-
-        <div class="gallery-item">
-
-            <img
-                src="foto4.jpg"
-                alt="Instalação Starlink"
-                onerror="this.style.display='none'"
-            >
-
-            <div class="gallery-overlay">
-
-                <h3>
-                    Instalação Starlink
-                </h3>
-
-                <p>
-                    Instalação e configuração.
-                </p>
-
-            </div>
-
-        </div>
-
-
-
-        <div class="gallery-item">
-
-            <img
-                src="foto5.jpg"
-                alt="Serviço Seven Tech"
-                onerror="this.style.display='none'"
-            >
-
-            <div class="gallery-overlay">
-
-                <h3>
-                    Projeto Seven Tech
-                </h3>
-
-                <p>
-                    Mais um trabalho realizado.
-                </p>
-
-            </div>
-
-        </div>
+        <img
+            src="servico-interfonia.jpg"
+            alt="Interfonia"
+        >
 
     </div>
+
+
+    <div class="servico-hover-texto">
+
+        <h3>
+            Interfonia
+        </h3>
+
+        <p>
+            Instalação e configuração de interfones
+            residenciais e prediais.
+        </p>
+
+    </div>
+
+</div>
+
+
+
+<!-- ====================================================
+     SERVIÇO 4
+==================================================== -->
+
+<div class="servico">
+
+    <div class="servico-conteudo">
+
+        <div class="icone">🛰️</div>
+
+        <h3>
+            Starlink
+        </h3>
+
+        <p>
+            Instalação e configuração de internet
+            via Starlink.
+        </p>
+
+    </div>
+
+
+    <div class="servico-imagem">
+
+        <img
+            src="servico-starlink.jpg"
+            alt="Instalação Starlink"
+        >
+
+    </div>
+
+
+    <div class="servico-hover-texto">
+
+        <h3>
+            Starlink
+        </h3>
+
+        <p>
+            Instalação, configuração e otimização
+            da sua conexão Starlink.
+        </p>
+
+    </div>
+
+</div>
+
+
+
+<!-- ====================================================
+     SERVIÇO 5
+==================================================== -->
+
+<div class="servico">
+
+    <div class="servico-conteudo">
+
+        <div class="icone">🌐</div>
+
+        <h3>
+            Infraestrutura de Redes
+        </h3>
+
+        <p>
+            Projetos e instalações completas
+            de infraestrutura de rede.
+        </p>
+
+    </div>
+
+
+    <div class="servico-imagem">
+
+        <img
+            src="servico-rede.jpg"
+            alt="Infraestrutura de Redes"
+        >
+
+    </div>
+
+
+    <div class="servico-hover-texto">
+
+        <h3>
+            Infraestrutura de Redes
+        </h3>
+
+        <p>
+            Redes estruturadas, organização e
+            configuração de equipamentos.
+        </p>
+
+    </div>
+
+</div>
+
+
+
+<!-- ====================================================
+     SERVIÇO 6
+==================================================== -->
+
+<div class="servico">
+
+    <div class="servico-conteudo">
+
+        <div class="icone">📡</div>
+
+        <h3>
+            Redes Wi-Fi
+        </h3>
+
+        <p>
+            Melhoramos a cobertura e estabilidade
+            da sua rede Wi-Fi.
+        </p>
+
+    </div>
+
+
+    <div class="servico-imagem">
+
+        <img
+            src="servico-wifi.jpg"
+            alt="Rede Wi-Fi"
+        >
+
+    </div>
+
+
+    <div class="servico-hover-texto">
+
+        <h3>
+            Redes Wi-Fi
+        </h3>
+
+        <p>
+            Instalação de Access Points, roteadores
+            e redes Wi-Fi profissionais.
+        </p>
+
+    </div>
+
+</div>
+
+
+
+<!-- ====================================================
+     SERVIÇO 7
+==================================================== -->
+
+<div class="servico">
+
+    <div class="servico-conteudo">
+
+        <div class="icone">💻</div>
+
+        <h3>
+            Suporte Técnico
+        </h3>
+
+        <p>
+            Atendimento técnico para computadores,
+            redes e equipamentos.
+        </p>
+
+    </div>
+
+
+    <div class="servico-imagem">
+
+        <img
+            src="servico-suporte.jpg"
+            alt="Suporte Técnico"
+        >
+
+    </div>
+
+
+    <div class="servico-hover-texto">
+
+        <h3>
+            Suporte Técnico
+        </h3>
+
+        <p>
+            Diagnóstico, manutenção e suporte
+            para sua estrutura tecnológica.
+        </p>
+
+    </div>
+
+</div>
+
+
+
+<!-- ====================================================
+     SERVIÇO 8
+==================================================== -->
+
+<div class="servico">
+
+    <div class="servico-conteudo">
+
+        <div class="icone">⚙️</div>
+
+        <h3>
+            Programação
+        </h3>
+
+        <p>
+            Configuração e programação de
+            equipamentos e sistemas.
+        </p>
+
+    </div>
+
+
+    <div class="servico-imagem">
+
+        <img
+            src="servico-programacao.jpg"
+            alt="Programação"
+        >
+
+    </div>
+
+
+    <div class="servico-hover-texto">
+
+        <h3>
+            Programação
+        </h3>
+
+        <p>
+            Configuração personalizada de sistemas
+            e equipamentos tecnológicos.
+        </p>
+
+    </div>
+
+</div>
+
+
+
+<!-- ====================================================
+     SERVIÇO 9
+==================================================== -->
+
+<div class="servico">
+
+    <div class="servico-conteudo">
+
+        <div class="icone">🔐</div>
+
+        <h3>
+            Programação de Alarmes
+        </h3>
+
+        <p>
+            Configuração e programação de sistemas
+            de segurança.
+        </p>
+
+    </div>
+
+
+    <div class="servico-imagem">
+
+        <img
+            src="servico-programacao-alarme.jpg"
+            alt="Programação de Alarmes"
+        >
+
+    </div>
+
+
+    <div class="servico-hover-texto">
+
+        <h3>
+            Programação de Alarmes
+        </h3>
+
+        <p>
+            Configuração completa para deixar
+            seu sistema funcionando corretamente.
+        </p>
+
+    </div>
+
+</div>
+
+
+
+<!-- ====================================================
+     SERVIÇO 10
+==================================================== -->
+
+<div class="servico">
+
+    <div class="servico-conteudo">
+
+        <div class="icone">🎥</div>
+
+        <h3>
+            Programação de CFTV
+        </h3>
+
+        <p>
+            Configuração e acesso remoto
+            aos sistemas de câmeras.
+        </p>
+
+    </div>
+
+
+    <div class="servico-imagem">
+
+        <img
+            src="servico-cftv.jpg"
+            alt="Programação de CFTV"
+        >
+
+    </div>
+
+
+    <div class="servico-hover-texto">
+
+        <h3>
+            Programação de CFTV
+        </h3>
+
+        <p>
+            Configuração de DVR, NVR e acesso
+            remoto pelo celular.
+        </p>
+
+    </div>
+
+</div>
+
+
+
+<!-- ====================================================
+     SERVIÇO 11
+==================================================== -->
+
+<div class="servico">
+
+    <div class="servico-conteudo">
+
+        <div class="icone">🔧</div>
+
+        <h3>
+            Manutenção
+        </h3>
+
+        <p>
+            Manutenção preventiva e corretiva
+            em equipamentos.
+        </p>
+
+    </div>
+
+
+    <div class="servico-imagem">
+
+        <img
+            src="servico-manutencao.jpg"
+            alt="Manutenção"
+        >
+
+    </div>
+
+
+    <div class="servico-hover-texto">
+
+        <h3>
+            Manutenção
+        </h3>
+
+        <p>
+            Manutenção e diagnóstico de equipamentos
+            tecnológicos e redes.
+        </p>
+
+    </div>
+
+</div>
+
+
+
+<!-- ====================================================
+     SERVIÇO 12
+==================================================== -->
+
+<div class="servico">
+
+    <div class="servico-conteudo">
+
+        <div class="icone">🏢</div>
+
+        <h3>
+            Segurança Empresarial
+        </h3>
+
+        <p>
+            Soluções completas para empresas
+            e condomínios.
+        </p>
+
+    </div>
+
+
+    <div class="servico-imagem">
+
+        <img
+            src="servico-empresa.jpg"
+            alt="Segurança Empresarial"
+        >
+
+    </div>
+
+
+    <div class="servico-hover-texto">
+
+        <h3>
+            Segurança Empresarial
+        </h3>
+
+        <p>
+            Projetos personalizados para proteger
+            empresas e patrimônios.
+        </p>
+
+    </div>
+
+</div>
+
+
+</div>
+
+</div>
 
 </section>
 
 
 
-<!-- =====================================================
-     DIFERENCIAIS
-===================================================== -->
+<!-- ======================================================
+     GALERIA
+====================================================== -->
 
-<section class="section">
+<section id="galeria">
 
-    <div class="section-title">
+<div class="container">
 
-        <small>POR QUE ESCOLHER A SEVEN TECH?</small>
+<div class="section-title">
 
-        <h2>
-            Nosso compromisso
-        </h2>
+    <h2>
+        Nossos <span>Projetos</span>
+    </h2>
 
-    </div>
+    <p>
+        Confira alguns dos trabalhos realizados
+        pela Seven Tech Solutions.
+    </p>
 
-
-    <div class="differentials">
-
-
-        <div class="differential">
-
-            <div class="differential-icon">
-                🛡️
-            </div>
-
-            <h3>
-                Segurança
-            </h3>
-
-            <p>
-                Soluções pensadas para proteger
-                pessoas, ambientes e equipamentos.
-            </p>
-
-        </div>
+</div>
 
 
-        <div class="differential">
-
-            <div class="differential-icon">
-                ⚡
-            </div>
-
-            <h3>
-                Agilidade
-            </h3>
-
-            <p>
-                Atendimento rápido e solução
-                objetiva para cada necessidade.
-            </p>
-
-        </div>
+<div class="galeria-grid">
 
 
-        <div class="differential">
+<div class="galeria-item">
 
-            <div class="differential-icon">
-                🎯
-            </div>
+    <img
+        src="foto1.jpg"
+        alt="Projeto Seven Tech"
+    >
 
-            <h3>
-                Projeto Personalizado
-            </h3>
-
-            <p>
-                Cada instalação é pensada de acordo
-                com o ambiente e necessidade do cliente.
-            </p>
-
-        </div>
+</div>
 
 
-        <div class="differential">
+<div class="galeria-item">
 
-            <div class="differential-icon">
-                🔧
-            </div>
+    <img
+        src="foto2.jpg"
+        alt="Projeto Seven Tech"
+    >
 
-            <h3>
-                Suporte
-            </h3>
+</div>
 
-            <p>
-                Acompanhamento e suporte técnico
-                após a instalação.
-            </p>
 
-        </div>
+<div class="galeria-item">
 
-    </div>
+    <img
+        src="foto3.jpg"
+        alt="Projeto Seven Tech"
+    >
+
+</div>
+
+
+<div class="galeria-item">
+
+    <img
+        src="foto4.jpg"
+        alt="Projeto Seven Tech"
+    >
+
+</div>
+
+
+<div class="galeria-item">
+
+    <img
+        src="foto5.jpg"
+        alt="Projeto Seven Tech"
+    >
+
+</div>
+
+
+<div class="galeria-item">
+
+    <img
+        src="foto6.jpg"
+        alt="Projeto Seven Tech"
+    >
+
+</div>
+
+
+</div>
+
+</div>
 
 </section>
 
 
 
-<!-- =====================================================
+<!-- ======================================================
      ORÇAMENTO
-===================================================== -->
+====================================================== -->
 
-<section class="section quote-section" id="orcamento">
+<section id="orcamento">
 
-    <div class="section-title">
+<div class="container">
 
-        <small>FALE CONOSCO</small>
+<div class="section-title">
 
-        <h2>
-            Solicite seu orçamento
-        </h2>
+    <h2>
+        Solicite seu <span>Orçamento</span>
+    </h2>
 
-        <p>
-            Preencha os dados abaixo e nossa equipe
-            receberá sua solicitação diretamente pelo WhatsApp.
-        </p>
+    <p>
+        Preencha o formulário e fale diretamente
+        com nossa equipe pelo WhatsApp.
+    </p>
 
-    </div>
-
-
-    <div class="form-container">
-
-        <form onsubmit="enviarWhats(); return false;">
+</div>
 
 
-            <div class="form-group">
-
-                <label for="nome">
-                    Nome completo *
-                </label>
-
-                <input
-                    id="nome"
-                    type="text"
-                    placeholder="Digite seu nome"
-                    required
-                >
-
-            </div>
+<form
+    class="formulario"
+    id="orcamentoForm"
+>
 
 
+<div class="form-group">
 
-            <div class="form-group">
+    <label for="nome">
+        Nome
+    </label>
 
-                <label for="telefone">
-                    Telefone *
-                </label>
+    <input
+        type="text"
+        id="nome"
+        required
+        placeholder="Digite seu nome"
+    >
 
-                <input
-                    id="telefone"
-                    type="tel"
-                    placeholder="(38) 99999-9999"
-                    required
-                >
-
-            </div>
-
+</div>
 
 
-            <div class="form-group">
+<div class="form-group">
 
-                <label for="servico">
-                    Serviço desejado *
-                </label>
+    <label for="telefone">
+        Telefone
+    </label>
 
-                <select id="servico" required>
+    <input
+        type="tel"
+        id="telefone"
+        required
+        placeholder="(38) 99999-9999"
+    >
 
-                    <option value="">
-                        Selecione um serviço
-                    </option>
-
-                    <option>
-                        Sistema de Câmeras IP
-                    </option>
-
-                    <option>
-                        CFTV
-                    </option>
-
-                    <option>
-                        Alarme Residencial
-                    </option>
-
-                    <option>
-                        Interfonia Predial
-                    </option>
-
-                    <option>
-                        Interfonia Residencial
-                    </option>
-
-                    <option>
-                        Starlink
-                    </option>
-
-                    <option>
-                        Infraestrutura de Rede
-                    </option>
-
-                    <option>
-                        Wi-Fi Profissional
-                    </option>
-
-                    <option>
-                        Suporte Técnico
-                    </option>
-
-                    <option>
-                        Programação de Sistemas
-                    </option>
-
-                    <option>
-                        Outro
-                    </option>
-
-                </select>
-
-            </div>
+</div>
 
 
+<div class="form-group">
 
-            <div class="form-group">
+    <label for="servico">
+        Serviço desejado
+    </label>
 
-                <label for="msg">
-                    Mensagem
-                </label>
+    <select
+        id="servico"
+        required
+    >
 
-                <textarea
-                    id="msg"
-                    placeholder="Descreva o que você precisa..."
-                ></textarea>
+        <option value="">
+            Selecione um serviço
+        </option>
 
-            </div>
+        <option>
+            Sistema de Câmeras
+        </option>
+
+        <option>
+            Alarme Residencial
+        </option>
+
+        <option>
+            Interfonia
+        </option>
+
+        <option>
+            Starlink
+        </option>
+
+        <option>
+            Infraestrutura de Redes
+        </option>
+
+        <option>
+            Rede Wi-Fi
+        </option>
+
+        <option>
+            Suporte Técnico
+        </option>
+
+        <option>
+            Programação
+        </option>
+
+        <option>
+            Programação de Alarmes
+        </option>
+
+        <option>
+            Programação de CFTV
+        </option>
+
+        <option>
+            Manutenção
+        </option>
+
+        <option>
+            Segurança Empresarial
+        </option>
+
+    </select>
+
+</div>
 
 
+<div class="form-group">
 
-            <button
-                type="submit"
-                class="btn form-button"
-            >
-                Enviar solicitação pelo WhatsApp
-            </button>
+    <label for="mensagem">
+        Descreva o que você precisa
+    </label>
+
+    <textarea
+        id="mensagem"
+        placeholder="Explique brevemente o que você precisa..."
+    ></textarea>
+
+</div>
 
 
-        </form>
+<button
+    type="submit"
+    class="btn"
+>
+    Enviar pelo WhatsApp
+</button>
 
-    </div>
+
+</form>
+
+</div>
 
 </section>
 
 
 
-<!-- =====================================================
+<!-- ======================================================
      CONTATO
-===================================================== -->
+====================================================== -->
 
-<section class="section" id="contato">
+<section id="contato">
 
-    <div class="section-title">
+<div class="container">
 
-        <small>FALE COM A GENTE</small>
+<div class="section-title">
 
-        <h2>
-            Entre em contato
-        </h2>
+    <h2>
+        Entre em <span>Contato</span>
+    </h2>
+
+    <p>
+        Estamos prontos para atender você.
+    </p>
+
+</div>
+
+
+<div class="contato-grid">
+
+
+<div class="contato-box">
+
+    <h3>
+        Seven Tech Solutions
+    </h3>
+
+
+    <div class="contato-item">
+
+        <strong>
+            WhatsApp:
+        </strong>
+
+        <br>
+
+        <a
+            href="https://wa.me/5538998103514"
+            target="_blank"
+        >
+            (38) 99810-3514
+        </a>
+
+    </div>
+
+
+    <div class="contato-item">
+
+        <strong>
+            Instagram:
+        </strong>
+
+        <br>
+
+        <a
+            href="https://instagram.com/seventech_solutions"
+            target="_blank"
+        >
+            @seventech_solutions
+        </a>
 
     </div>
 
 
-    <div class="contact">
+    <div class="contato-item">
 
+        <strong>
+            Localização:
+        </strong>
 
-        <div class="contact-card">
+        <br>
 
-            <h3>
-                Seven Tech Solutions
-            </h3>
-
-
-            <div class="contact-item">
-
-                <span>
-                    WhatsApp
-                </span>
-
-                <a
-                    href="https://wa.me/5538998103514"
-                    target="_blank"
-                >
-                    (38) 99810-3514
-                </a>
-
-            </div>
-
-
-            <div class="contact-item">
-
-                <span>
-                    Instagram
-                </span>
-
-                <a
-                    href="https://instagram.com/seventech_solutions"
-                    target="_blank"
-                >
-                    @seventech_solutions
-                </a>
-
-            </div>
-
-
-            <div class="contact-item">
-
-                <span>
-                    Localização
-                </span>
-
-                <p>
-                    Unaí - Minas Gerais
-                </p>
-
-            </div>
-
-
-            <div class="contact-item">
-
-                <span>
-                    Atendimento
-                </span>
-
-                <p>
-                    Residências, empresas,
-                    comércios e condomínios.
-                </p>
-
-            </div>
-
-
-            <a
-                href="https://wa.me/5538998103514"
-                target="_blank"
-                class="btn"
-            >
-                Solicitar atendimento
-            </a>
-
-        </div>
-
-
-        <iframe
-            class="map"
-            src="https://maps.google.com/maps?q=unai%20mg&t=&z=13&ie=UTF8&iwloc=&output=embed"
-            title="Localização Seven Tech Solutions em Unaí MG"
-            loading="lazy">
-        </iframe>
-
-
+        Unaí - MG
     </div>
+
+
+    <div class="contato-item">
+
+        <strong>
+            Atendimento:
+        </strong>
+
+        <br>
+
+        Residencial, empresarial e condomínios.
+    </div>
+
+</div>
+
+
+
+<div>
+
+<iframe
+    class="maps"
+    src="https://www.google.com/maps?q=Una%C3%AD%20MG&output=embed"
+    loading="lazy"
+    allowfullscreen>
+</iframe>
+
+</div>
+
+
+</div>
+
+</div>
 
 </section>
 
 
 
-<!-- =====================================================
+<!-- ======================================================
      FOOTER
-===================================================== -->
+====================================================== -->
 
 <footer>
 
-    <div class="footer-logo">
-        SEVEN TECH SOLUTIONS
-    </div>
+    © 2026
+    <span>
+        Seven Tech Solutions
+    </span>
 
-
-    <p>
-        Tecnologia, Segurança e Conectividade
-    </p>
-
-
-    <div class="footer-links">
-
-        <a href="#inicio">
-            Início
-        </a>
-
-        <a href="#servicos">
-            Serviços
-        </a>
-
-        <a href="#trabalhos">
-            Trabalhos
-        </a>
-
-        <a href="#orcamento">
-            Orçamento
-        </a>
-
-        <a href="#contato">
-            Contato
-        </a>
-
-    </div>
-
-
-    <p>
-        © 2026 Seven Tech Solutions.
-        Todos os direitos reservados.
-    </p>
+    — Tecnologia, Segurança e Conectividade.
 
 </footer>
 
 
 
-<!-- =====================================================
+<!-- ======================================================
      WHATSAPP FLUTUANTE
-===================================================== -->
+====================================================== -->
 
 <a
-    class="whatsapp"
-    href="https://wa.me/5538998103514"
+    class="whatsapp-float"
+    href="https://wa.me/5538998103514?text=Olá%20Seven%20Tech,%20gostaria%20de%20mais%20informações."
     target="_blank"
-    title="Falar pelo WhatsApp"
-    aria-label="Falar pelo WhatsApp"
+    aria-label="WhatsApp"
 >
-    💬
+    ☎
 </a>
 
 
@@ -2141,94 +2090,92 @@ footer p {
    MENU MOBILE
 ========================================================= */
 
-const menuToggle = document.getElementById("menuToggle");
+function toggleMenu() {
 
-const nav = document.getElementById("nav");
+    const menu = document.getElementById("menu");
 
+    menu.classList.toggle("active");
 
-menuToggle.addEventListener("click", function () {
-
-    nav.classList.toggle("active");
-
-});
+}
 
 
-document.querySelectorAll("nav a").forEach(function(link) {
+/* =========================================================
+   FECHAR MENU AO CLICAR
+========================================================= */
+
+document.querySelectorAll(".nav-links a").forEach(function(link) {
 
     link.addEventListener("click", function() {
 
-        nav.classList.remove("active");
+        document
+            .getElementById("menu")
+            .classList.remove("active");
 
     });
 
 });
 
 
-
 /* =========================================================
-   ENVIO DO ORÇAMENTO PARA WHATSAPP
+   FORMULÁRIO → WHATSAPP
 ========================================================= */
 
-function enviarWhats() {
+document
+.getElementById("orcamentoForm")
+.addEventListener("submit", function(event) {
+
+    event.preventDefault();
+
 
     const nome =
-        document.getElementById("nome").value.trim();
+        document.getElementById("nome").value;
 
     const telefone =
-        document.getElementById("telefone").value.trim();
+        document.getElementById("telefone").value;
 
     const servico =
         document.getElementById("servico").value;
 
-    const msg =
-        document.getElementById("msg").value.trim();
-
-
-    if (!nome || !telefone || !servico) {
-
-        alert("Por favor, preencha os campos obrigatórios.");
-
-        return;
-
-    }
+    const mensagem =
+        document.getElementById("mensagem").value;
 
 
     let texto =
+
         "Olá, Seven Tech Solutions!%0A%0A" +
+
+        "*Solicitação de orçamento*%0A%0A" +
 
         "Nome: " +
         encodeURIComponent(nome) +
-
         "%0A" +
 
         "Telefone: " +
         encodeURIComponent(telefone) +
-
         "%0A" +
 
         "Serviço: " +
-        encodeURIComponent(servico);
+        encodeURIComponent(servico) +
+        "%0A" +
 
-
-    if (msg) {
-
-        texto +=
-            "%0A%0AMensagem: " +
-            encodeURIComponent(msg);
-
-    }
+        "Mensagem: " +
+        encodeURIComponent(mensagem);
 
 
     const whatsapp =
-        "https://wa.me/5538998103514?text=" + texto;
+        "https://wa.me/5538998103514?text=" +
+        texto;
 
 
-    window.open(whatsapp, "_blank");
+    window.open(
+        whatsapp,
+        "_blank"
+    );
 
-}
+});
 
 </script>
 
+
 </body>
 </html>
-```
